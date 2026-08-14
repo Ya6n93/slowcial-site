@@ -93,11 +93,18 @@ h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--night);color:var(--cream);overflow:hidden}
 .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero .poster{background:url(media/hero-poster.jpg) center/cover no-repeat}
-.hero video{opacity:0;transition:opacity 1.4s ease}
+/* L'affiche est la PREMIÈRE image de la vidéo : le passage de l'une à l'autre est
+   invisible, donc un fondu court suffit (un fondu long sur deux images
+   différentes donnait un effet de double exposition). */
+.hero video{opacity:0;transition:opacity .3s linear}
 .hero video.on{opacity:1}
-/* Dégradés : lisibilité du texte + fondu vers le papier de la section suivante. */
+/* Voile de lisibilité UNIQUEMENT — pas de fondu vers le papier : mélanger du
+   noir vers du crème salissait tout le bas de l'image. Le hero se termine net,
+   et la section papier commence franchement. */
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(12,8,4,.82) 0%,rgba(12,8,4,.34) 38%,rgba(12,8,4,.88) 84%,var(--paper) 100%)}
+  background:
+    linear-gradient(180deg,rgba(12,8,4,.58) 0%,rgba(12,8,4,.10) 30%,rgba(12,8,4,.42) 60%,rgba(12,8,4,.88) 100%),
+    radial-gradient(130% 78% at 50% 4%,transparent 42%,rgba(12,8,4,.40) 100%)}
 .hero .wrap{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;padding-top:34px;padding-bottom:38px}
 .brand{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.035em;display:flex}
 .brand i{font-style:normal;opacity:0;transform:translateY(14px);animation:pop .5s cubic-bezier(.2,.8,.3,1) forwards}
