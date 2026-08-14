@@ -1,187 +1,527 @@
 <!doctype html>
 <!--
-  Page de présentation de Slowcial.
+  Site de lancement de Slowcial.
 
-  Sans front matter : Jekyll la recopie telle quelle, sans layout ni thème — le
-  thème `minimal` ne sert qu'aux pages légales.
+  Sans front matter : Jekyll recopie le fichier tel quel (le thème `minimal` ne
+  sert qu'aux pages légales). Tout est inline — zéro dépendance, zéro framework.
 
-  Les liens vers les pages légales sont RELATIFS à dessein : ils fonctionnent
-  aussi bien sous /slowcial-site/ qu'à la racine d'un domaine propre.
+  Direction artistique : la vidéo (foule dans le noir, éclairée par les écrans)
+  porte le PROBLÈME ; le papier chaud porte la RÉPONSE. Le site bascule de l'un
+  à l'autre, et ne revient au sombre qu'en pied de page.
 
-  Aucun logo de réseau ici, volontairement : les marques tierces sont le point
-  d'exposition n°1 de l'app (App Store 5.2.1). Les noms en texte suffisent.
+  Aucun logo de réseau, volontairement : les marques tierces sont le point
+  d'exposition n°1 côté revue Apple (5.2.1). Les noms en texte suffisent.
+
+  Liens légaux RELATIFS : valides sous /slowcial-site/ comme à la racine d'un
+  domaine propre.
 -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slowcial — Tes réseaux, en plus calme</title>
-<meta name="description" content="Slowcial retire les reels, les shorts et les fils de recommandation de tes réseaux, et garde les messages et les profils. Rien ne quitte ton téléphone.">
-<meta property="og:title" content="Slowcial — Tes réseaux, en plus calme">
-<meta property="og:description" content="Garde tes messages et tes profils. Slowcial retire ce qui est conçu pour te retenir.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slowcial — Reprends ton temps sur les réseaux sociaux</title>
+
+<meta name="description" content="Slowcial retire les reels, les shorts et les fils de recommandation d'Instagram, YouTube, TikTok et Facebook, et garde les messages et les profils. Moins de scroll infini, plus de temps à toi. Rien ne quitte ton téléphone.">
+<meta name="keywords" content="temps d'écran, scroll infini, détox numérique, bien-être numérique, reels, shorts, désintoxication réseaux sociaux, concentration, application anti scroll, limiter instagram, limiter tiktok, réduire temps écran">
+<meta name="author" content="Slowcial">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0C0804">
+<link rel="canonical" href="https://slowcial-app.com/">
+
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230C0804'/><circle cx='50' cy='58' r='13' fill='%23E0895B'/></svg>">
+<meta property="og:site_name" content="Slowcial">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Slowcial — Reprends ton temps sur les réseaux sociaux">
+<meta property="og:description" content="Garde tes messages et tes profils. Slowcial retire ce qui est conçu pour te retenir : vidéos courtes, fils « pour toi », pages Explore.">
+<meta property="og:url" content="https://slowcial-app.com/">
+<meta property="og:image" content="https://slowcial-app.com/media/hero-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Slowcial — Reprends ton temps sur les réseaux sociaux">
+<meta name="twitter:description" content="Moins de scroll infini, plus de temps à toi. Rien ne quitte ton téléphone.">
+<meta name="twitter:image" content="https://slowcial-app.com/media/hero-poster.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230C0804'/><circle cx='50' cy='57' r='13' fill='%23E0895B'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="media/hero-poster.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://slowcial-app.com/#org","name":"Slowcial","url":"https://slowcial-app.com/","email":"contact@slowcial-app.com","logo":"https://slowcial-app.com/media/hero-poster.jpg"},
+ {"@type":"WebSite","@id":"https://slowcial-app.com/#site","url":"https://slowcial-app.com/","name":"Slowcial","inLanguage":"fr-FR","publisher":{"@id":"https://slowcial-app.com/#org"}},
+ {"@type":"SoftwareApplication","name":"Slowcial","applicationCategory":"HealthApplication","operatingSystem":"iOS","inLanguage":["fr","en","de","es","it","pl","pt","nl"],
+  "description":"Application de bien-être numérique qui retire les vidéos courtes, les fils de recommandation et les pages de découverte des réseaux sociaux, et conserve les messages et les profils.",
+  "url":"https://slowcial-app.com/","publisher":{"@id":"https://slowcial-app.com/#org"},
+  "offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Un réseau filtré, gratuitement"},
+            {"@type":"Offer","price":"39.90","priceCurrency":"EUR","description":"Premium annuel — filtrage illimité"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Slowcial bloque-t-il les réseaux sociaux ?","acceptedAnswer":{"@type":"Answer","text":"Non. Slowcial ne bloque rien et ne coupe pas l'accès. Il retire de l'affichage les éléments conçus pour retenir l'attention — vidéos courtes, fils de recommandation, pages de découverte — et laisse le reste intact : messages, profils, publications."}},
+  {"@type":"Question","name":"Faut-il donner ses identifiants à Slowcial ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tu te connectes directement au réseau concerné, dans une vue web, exactement comme dans un navigateur. Slowcial ne lit pas, ne copie pas et ne transmet pas tes identifiants."}},
+  {"@type":"Question","name":"Mes données sont-elles envoyées quelque part ?","acceptedAnswer":{"@type":"Answer","text":"Non. Slowcial n'a pas de compte et pas de serveur. Tes réglages et ton temps d'écran restent sur ton appareil. Seuls des rapports de plantage anonymes peuvent être envoyés, et ils se coupent dans les réglages."}},
+  {"@type":"Question","name":"Quels réseaux sont pris en charge ?","acceptedAnswer":{"@type":"Answer","text":"Instagram, YouTube, TikTok, Facebook, Reddit, X et Snapchat. Chaque réseau a ses propres réglages de filtrage, que tu actives ou coupes un par un."}},
+  {"@type":"Question","name":"Combien coûte Slowcial ?","acceptedAnswer":{"@type":"Answer","text":"Un réseau filtré est gratuit. Premium débloque le filtrage illimité sur tous les réseaux, à 39,90 € par an ou 3,99 € par mois."}}]}
+]}
+</script>
+
 <style>
-  /* Palette reprise telle quelle de src/theme.ts (clair) + l'écran d'accueil sombre. */
-  :root{
-    --ink:#3B2A1E; --ink2:#8A7B67; --paper:#F4EDDE; --card:#FCF7EC; --line:#DED2B8;
-    --terra:#B5522E; --ocre:#C08A2D; --olive:#6C7145;
-    --night:#0C0804; --cream:#F5EEDF; --terra-light:#E0895B;
-    --display:"Bricolage Grotesque",system-ui,sans-serif;
-    --body:"Instrument Sans",system-ui,sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%}
-  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.08}
+/* Palette et polices reprises telles quelles de src/theme.ts. */
+:root{
+  --ink:#3B2A1E; --ink2:#8A7B67; --paper:#F4EDDE; --card:#FCF7EC; --line:#DED2B8;
+  --terra:#B5522E; --ocre:#C08A2D; --olive:#6C7145;
+  --night:#0C0804; --cream:#F5EEDF; --glow:#E0895B;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+  --w:1080px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 26px}
+h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06;font-weight:600}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
 
-  /* — Hero sombre, en écho à l'écran de lancement de l'app — */
-  header{background:var(--night);color:var(--cream);padding:72px 0 84px}
-  .wordmark{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.03em}
-  .wordmark span{color:var(--terra-light)}
-  h1{font-size:clamp(40px,8vw,68px);font-weight:800;margin:56px 0 0}
-  h1 em{font-style:normal;color:var(--terra-light)}
-  .lead{margin-top:20px;font-size:clamp(18px,2.6vw,21px);color:rgba(245,238,223,.86);max-width:34ch}
-  .soon{display:inline-block;margin-top:34px;padding:11px 20px;border:1.5px solid rgba(245,238,223,.28);
-        border-radius:999px;font-family:var(--body);font-weight:500;font-size:14px;color:rgba(245,238,223,.8)}
+/* ————— Révélations au défilement (coupées si l'utilisateur préfère moins d'animation) ————— */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.rev.in{opacity:1;transform:none}
+.rev[data-d="1"]{transition-delay:.09s}.rev[data-d="2"]{transition-delay:.18s}
+.rev[data-d="3"]{transition-delay:.27s}.rev[data-d="4"]{transition-delay:.36s}
 
-  /* — Corps papier — */
-  section{padding:64px 0}
-  section + section{border-top:1px solid var(--line)}
-  h2{font-size:clamp(26px,4vw,34px);font-weight:600;margin-bottom:10px}
-  .sub{color:var(--ink2);margin-bottom:28px;max-width:56ch}
-  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
-  .card h3{font-size:19px;font-weight:600;margin-bottom:14px}
-  .card ul{list-style:none}
-  .card li{position:relative;padding-left:26px;margin:9px 0;color:var(--ink)}
-  .card li::before{position:absolute;left:0;top:-1px;font-size:17px}
-  .out li::before{content:"−";color:var(--terra);font-weight:700}
-  .keep li::before{content:"✓";color:var(--olive);font-weight:700}
-  .quote{font-family:var(--display);font-weight:500;font-size:clamp(21px,3.4vw,27px);
-         line-height:1.35;max-width:26ch;color:var(--ink)}
-  .quote small{display:block;margin-top:14px;font-family:var(--body);font-size:16px;
-               font-weight:400;color:var(--ink2);max-width:52ch}
-  .privacy{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
-  .privacy p{max-width:58ch;color:var(--ink2)}
-  .privacy strong{color:var(--ink)}
+/* ————— HERO : la vidéo porte le problème ————— */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--night);color:var(--cream);overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .poster{background:url(media/hero-poster.jpg) center/cover no-repeat}
+.hero video{opacity:0;transition:opacity 1.4s ease}
+.hero video.on{opacity:1}
+/* Dégradés : lisibilité du texte + fondu vers le papier de la section suivante. */
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(12,8,4,.82) 0%,rgba(12,8,4,.34) 38%,rgba(12,8,4,.88) 84%,var(--paper) 100%)}
+.hero .wrap{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;padding-top:34px;padding-bottom:38px}
+.brand{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.035em;display:flex}
+.brand i{font-style:normal;opacity:0;transform:translateY(14px);animation:pop .5s cubic-bezier(.2,.8,.3,1) forwards}
+.brand i:last-child{color:var(--glow)}
+@keyframes pop{to{opacity:1;transform:none}}
+.hero-mid{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px}
+h1{font-size:clamp(42px,8.2vw,86px);font-weight:800;max-width:15ch}
+h1 em{font-style:normal;color:var(--glow)}
+.hero p{margin-top:22px;font-size:clamp(18px,2.3vw,22px);color:rgba(245,238,223,.88);max-width:38ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1.5px solid rgba(245,238,223,.3);border-radius:999px;font-size:14.5px;font-weight:500;color:rgba(245,238,223,.9)}
+.badge b{width:7px;height:7px;border-radius:50%;background:var(--glow);animation:blink 2.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.32}}
+.hero-note{font-size:14px;color:rgba(245,238,223,.55)}
+.scroll{display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,223,.5);margin-top:40px}
+.scroll span{display:block;width:34px;height:1px;background:rgba(245,238,223,.4);animation:slide 2.4s ease-in-out infinite}
+@keyframes slide{0%,100%{transform:scaleX(1);transform-origin:left}50%{transform:scaleX(.35);transform-origin:left}}
 
-  footer{background:var(--night);color:rgba(245,238,223,.72);padding:44px 0;font-size:15px}
-  footer a{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
-  .links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:18px}
-  .fine{font-size:13px;color:rgba(245,238,223,.5);margin-top:16px;max-width:62ch}
+/* ————— Constat : arithmétique, pas de statistique inventée ————— */
+.stat{padding:96px 0 84px;text-align:center}
+.stat .num{font-size:clamp(78px,17vw,190px);font-weight:800;color:var(--terra);line-height:.86;letter-spacing:-.05em}
+.stat .unit{font-family:var(--display);font-size:clamp(20px,3.4vw,30px);font-weight:600;color:var(--ink);margin-top:10px}
+.stat p{max-width:44ch;margin:22px auto 0;color:var(--ink2)}
+
+/* ————— Fenêtre : la vidéo revient, encadrée, comme un souvenir ————— */
+.window{padding:0 0 96px}
+.frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/9;background:var(--night);
+  box-shadow:0 30px 70px -34px rgba(59,42,30,.55)}
+.frame video,.frame .poster{width:100%;height:100%;object-fit:cover}
+.frame .poster{background:url(media/hero-poster.jpg) center/cover no-repeat}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,8,4,.15),rgba(12,8,4,.72))}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,4vw,40px);
+  font-family:var(--display);font-weight:600;font-size:clamp(21px,3.6vw,38px);color:var(--cream);line-height:1.16;letter-spacing:-.03em}
+.frame figcaption small{display:block;margin-top:12px;font-family:var(--body);font-weight:400;font-size:clamp(14px,1.7vw,17px);color:rgba(245,238,223,.72);max-width:46ch;letter-spacing:0}
+
+/* ————— Sections papier ————— */
+section.pane{padding:88px 0;border-top:1px solid var(--line)}
+.head{max-width:62ch;margin-bottom:38px}
+.head h2{font-size:clamp(28px,4.6vw,44px);margin-top:12px}
+.head p{margin-top:16px;color:var(--ink2)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(238px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.card h3{font-size:20px;margin-bottom:14px}
+.card p{color:var(--ink2);font-size:16px}
+.card ul{list-style:none;margin-top:4px}
+.card li{position:relative;padding-left:27px;margin:11px 0;font-size:16.5px}
+.card li::before{position:absolute;left:0;top:0;font-weight:700;font-size:17px}
+.out li::before{content:"−";color:var(--terra)}
+.keep li::before{content:"✓";color:var(--olive)}
+.step{border-left:2px solid var(--terra);padding:4px 0 4px 22px}
+.step .k{font-family:var(--display);font-size:13px;font-weight:600;color:var(--terra);letter-spacing:.08em}
+.step h3{margin:8px 0 8px}
+.nets{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.net{padding:10px 17px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);
+  font-weight:500;font-size:15.5px;transition:border-color .25s,transform .25s}
+.net:hover{border-color:var(--terra);transform:translateY(-2px)}
+.quote{font-family:var(--display);font-weight:500;font-size:clamp(23px,3.9vw,40px);line-height:1.24;max-width:20ch;letter-spacing:-.03em}
+.quote em{font-style:normal;color:var(--terra)}
+.aside{color:var(--ink2);max-width:50ch}
+.split{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:start}
+
+/* Tarifs — à réconcilier avec le gating réel avant publication. */
+.price{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.plan{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:30px;position:relative}
+.plan.hot{border-color:var(--terra);background:color-mix(in srgb,var(--terra) 8%,var(--card))}
+.tag{position:absolute;top:-12px;left:26px;background:var(--terra);color:var(--card);font-size:11.5px;
+  font-weight:600;padding:5px 11px;border-radius:8px;letter-spacing:.03em}
+.plan .amount{font-family:var(--display);font-size:40px;font-weight:800;color:var(--terra);letter-spacing:-.04em}
+.plan .per{font-size:14px;color:var(--ink2);font-weight:400;font-family:var(--body)}
+.plan p{margin-top:10px;color:var(--ink2);font-size:15.5px}
+
+details{border-top:1px solid var(--line);padding:20px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:18.5px;
+  display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--terra);font-size:22px;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:13px;color:var(--ink2);max-width:64ch}
+
+footer{background:var(--night);color:rgba(245,238,223,.72);padding:74px 0 44px;font-size:15.5px}
+footer .fbrand{font-family:var(--display);font-weight:800;font-size:26px;color:var(--cream);letter-spacing:-.035em}
+footer .fbrand span{color:var(--glow)}
+footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.6vw,34px);color:var(--cream);
+  margin:26px 0 40px;max-width:18ch;letter-spacing:-.03em;line-height:1.15}
+.flinks{display:flex;flex-wrap:wrap;gap:12px 26px;padding-top:26px;border-top:1px solid rgba(245,238,223,.16)}
+.flinks a{text-decoration:none;border-bottom:1px solid rgba(245,238,223,.3);padding-bottom:2px}
+.flinks a:hover{border-color:var(--glow);color:var(--cream)}
+.fine{margin-top:26px;font-size:13px;color:rgba(245,238,223,.46);max-width:66ch}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  section.pane{padding:66px 0}
+  .card{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rev{opacity:1;transform:none;transition:none}
+  .brand i{opacity:1;transform:none;animation:none}
+  .badge b,.scroll span{animation:none}
+  .hero video{display:none}
+}
 </style>
 </head>
 <body>
 
-<header>
+<header class="hero" id="haut">
+  <div class="poster" aria-hidden="true"></div>
+  <video id="heroVid" muted loop playsinline preload="none" poster="media/hero-poster.jpg"
+         aria-label="Une foule de personnes dans l'obscurité, chacune éclairée par l'écran de son téléphone"></video>
   <div class="wrap">
-    <div class="wordmark">slowcial<span>.</span></div>
-    <h1><em>Ralentis</em><br>sur les réseaux.</h1>
-    <p class="lead">Reste connecté, sans t'y perdre.</p>
-    <span class="soon">Bientôt sur l'App Store</span>
+    <div class="brand" aria-label="slowcial">
+      <i>s</i><i>l</i><i>o</i><i>w</i><i>c</i><i>i</i><i>a</i><i>l</i><i>.</i>
+    </div>
+
+    <div class="hero-mid">
+      <h1><em>Ralentis</em> sur les réseaux.</h1>
+      <p>Garde tes messages et tes profils. Slowcial retire ce qui est conçu pour te retenir.</p>
+      <div class="hero-cta">
+        <span class="badge"><b></b> Bientôt sur l'App Store</span>
+        <span class="hero-note">iPhone · 8 langues · sans compte</span>
+      </div>
+      <div class="scroll"><span></span> Fais défiler</div>
+    </div>
   </div>
 </header>
 
 <main>
-  <section>
+
+  <section class="stat">
     <div class="wrap">
-      <p class="quote">
-        On ne bloque pas les réseaux sociaux. Ce n'est pas réaliste.
-        <small>Slowcial retire chirurgicalement les mécaniques les plus addictives,
-        et laisse le reste intact. Tes messages, tes profils, tes amis : tout est là.</small>
+      <p class="eyebrow rev">Le calcul que personne ne fait</p>
+      <div class="num rev" data-d="1"><span id="count">30</span></div>
+      <div class="unit rev" data-d="1">jours par an, passés à faire défiler</div>
+      <p class="rev" data-d="2">
+        Deux heures par jour sur les réseaux, c'est un mois entier chaque année.
+        Pas un mois de messages ou de nouvelles de tes amis : un mois de vidéos que
+        tu n'as pas choisies, servies par un algorithme payé pour te garder.
       </p>
     </div>
   </section>
 
-  <section>
+  <section class="window">
     <div class="wrap">
-      <h2>Ce qui part, ce qui reste</h2>
-      <p class="sub">Le filtrage s'applique sur ton téléphone, réseau par réseau, et tu choisis quoi couper.</p>
-      <div class="cols">
-        <div class="card out">
-          <h3>Slowcial retire</h3>
+      <figure class="frame rev">
+        <div class="poster" aria-hidden="true"></div>
+        <video id="frameVid" muted loop playsinline preload="none" poster="media/hero-poster.jpg" aria-hidden="true"></video>
+        <figcaption>
+          Tu n'as jamais décidé d'y passer autant de temps.
+          <small>Personne ne l'a décidé. C'est le produit qui est construit comme ça — et il fonctionne très bien.</small>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="pane" id="fonctionnement">
+    <div class="wrap">
+      <div class="head rev">
+        <p class="eyebrow">Le principe</p>
+        <h2>On ne bloque pas les réseaux. Ce n'est pas réaliste.</h2>
+        <p>
+          Les applications de blocage finissent toutes de la même façon : désinstallées
+          au bout de trois jours, parce qu'on a besoin de ses messages. Slowcial prend
+          le problème par l'autre bout — il retire chirurgicalement les mécaniques
+          addictives, et laisse le reste intact.
+        </p>
+      </div>
+      <div class="grid g2">
+        <div class="card out rev" data-d="1">
+          <h3>Ce que Slowcial retire</h3>
           <ul>
-            <li>Les fils de vidéos courtes, pensés pour que tu scrolles sans fin</li>
+            <li>Les fils de vidéos courtes — reels, shorts — pensés pour que tu ne trouves jamais la fin</li>
             <li>Les recommandations algorithmiques et le fil « pour toi »</li>
             <li>Les pages Explore et Découverte</li>
-            <li>Les contenus sponsorisés</li>
+            <li>Les publications sponsorisées et les publicités du fil</li>
+            <li>Les bandeaux qui te poussent à installer l'application native</li>
           </ul>
         </div>
-        <div class="card keep">
-          <h3>Tu gardes</h3>
+        <div class="card keep rev" data-d="2">
+          <h3>Ce que tu gardes</h3>
           <ul>
-            <li>Tes messages et tes conversations</li>
+            <li>Tes messages et tes conversations, intacts</li>
             <li>Les profils que tu choisis de visiter</li>
+            <li>Le fil de tes abonnements, dans l'ordre chronologique</li>
             <li>Ce que tes amis t'envoient directement</li>
-            <li>La possibilité de publier et de partager</li>
+            <li>La possibilité de publier, commenter et partager</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="pane">
     <div class="wrap">
-      <h2>Comment ça marche</h2>
-      <p class="sub">
-        Quand un ami t'envoie une vidéo, tu peux la regarder — mais tu ne peux pas
-        scroller vers la suivante. Ce simple garde-fou, c'est toute la différence
-        entre un coup d'œil de 30 secondes et une spirale de 30 minutes.
-      </p>
-      <div class="cols">
-        <div class="card">
-          <h3>Tes réseaux, filtrés</h3>
-          <p style="color:var(--ink2)">Instagram, YouTube, TikTok, Facebook, Reddit, X et Snapchat. Tu ouvres, tu te connectes avec ton compte, Slowcial nettoie l'affichage.</p>
+      <div class="head rev">
+        <p class="eyebrow">Comment ça marche</p>
+        <h2>Trois étapes, une minute.</h2>
+      </div>
+      <div class="grid g3">
+        <div class="step rev" data-d="1">
+          <div class="k">01</div>
+          <h3>Choisis tes réseaux</h3>
+          <p class="aside">Tu sélectionnes ceux que tu utilises vraiment. Chacun garde ses propres réglages de filtrage.</p>
         </div>
-        <div class="card">
-          <h3>Ton temps, mesuré</h3>
-          <p style="color:var(--ink2)">Chaque jour et chaque semaine, tu vois combien de temps tu as passé, réseau par réseau. La mesure reste sur ton téléphone.</p>
+        <div class="step rev" data-d="2">
+          <div class="k">02</div>
+          <h3>Connecte-toi normalement</h3>
+          <p class="aside">Tu ouvres le réseau depuis Slowcial et tu te connectes avec ton compte, comme dans un navigateur. Rien ne transite par nous.</p>
+        </div>
+        <div class="step rev" data-d="3">
+          <div class="k">03</div>
+          <h3>Le superflu disparaît</h3>
+          <p class="aside">Le filtrage s'applique sur ton téléphone, à l'affichage. Un bouton flottant te laisse ajuster chaque règle à la volée.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <h2>La confidentialité d'abord</h2>
-      <div class="privacy">
-        <p>
-          <strong>Slowcial ne te piste pas.</strong> Pas de compte à créer, pas de serveur
-          qui stocke ton suivi, aucun profilage, rien à revendre. Tes réglages et ton
-          temps d'écran restent dans l'application, sur ton appareil, et disparaissent
-          si tu la désinstalles.
+  <section class="pane">
+    <div class="wrap split">
+      <div class="rev">
+        <p class="eyebrow">Le garde-fou</p>
+        <p class="quote" style="margin-top:12px">
+          Tu peux regarder la vidéo qu'un ami t'envoie. Tu ne peux pas <em>scroller vers la suivante</em>.
         </p>
-        <p style="margin-top:14px">
-          Seuls des rapports de plantage anonymes peuvent être envoyés pour corriger
-          les bugs — sans ton pseudo ni les pages que tu consultes — et tu peux les
-          couper d'un geste dans les réglages.
+      </div>
+      <div class="rev" data-d="1">
+        <p class="aside">
+          C'est toute la différence entre un coup d'œil de trente secondes et une
+          spirale de trente minutes. Le contenu ne disparaît pas de ta vie : c'est
+          le tapis roulant qui s'arrête.
+        </p>
+        <p class="aside" style="margin-top:16px">
+          Et parce qu'on ne change pas une habitude sans la voir, Slowcial mesure
+          le temps que tu passes, jour par jour et réseau par réseau. La mesure
+          reste sur ton téléphone — elle est pour toi, pas pour nous.
         </p>
       </div>
     </div>
   </section>
+
+  <section class="pane" id="reseaux">
+    <div class="wrap">
+      <div class="head rev">
+        <p class="eyebrow">Compatibilité</p>
+        <h2>Sept réseaux, des réglages pour chacun.</h2>
+        <p>
+          Un fil « pour toi » ne se retire pas comme une page Explore. Chaque réseau
+          a ses propres règles, et tu actives ou coupes chacune indépendamment.
+        </p>
+      </div>
+      <div class="nets rev" data-d="1">
+        <span class="net">Instagram</span><span class="net">YouTube</span><span class="net">TikTok</span>
+        <span class="net">Facebook</span><span class="net">Reddit</span><span class="net">X</span>
+        <span class="net">Snapchat</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane" id="confidentialite">
+    <div class="wrap split">
+      <div class="rev">
+        <p class="eyebrow">Confidentialité</p>
+        <p class="quote" style="margin-top:12px">Il n'y a rien à revendre, parce qu'il n'y a rien de collecté.</p>
+      </div>
+      <div class="rev" data-d="1">
+        <p class="aside">
+          Pas de compte à créer, pas de serveur qui stocke ton suivi, aucun profilage,
+          aucun traceur publicitaire. Tes réglages et ton temps d'écran vivent dans
+          l'application, sur ton appareil, et disparaissent si tu la désinstalles.
+        </p>
+        <p class="aside" style="margin-top:16px">
+          Seuls des rapports de plantage anonymes peuvent être envoyés pour corriger
+          les bugs — sans ton pseudo, sans les pages que tu consultes — et ils se
+          coupent d'un geste dans les réglages.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane" id="tarifs">
+    <div class="wrap">
+      <div class="head rev">
+        <p class="eyebrow">Tarifs</p>
+        <h2>Gratuit pour commencer.</h2>
+        <p>Financé uniquement par ceux qui l'utilisent. Pas de publicité, pas de revente de données — les deux seuls autres modèles possibles.</p>
+      </div>
+      <div class="price">
+        <div class="plan rev" data-d="1">
+          <h3>Gratuit</h3>
+          <div class="amount">0 €</div>
+          <p>Un réseau filtré, tous les réglages, la mesure du temps. Sans limite de durée.</p>
+        </div>
+        <div class="plan hot rev" data-d="2">
+          <span class="tag">2 mois offerts</span>
+          <h3>Premium annuel</h3>
+          <div class="amount">3,33 € <span class="per">/ mois</span></div>
+          <p>Filtrage illimité sur tous tes réseaux, statistiques détaillées. 39,90 € facturés par an.</p>
+        </div>
+        <div class="plan rev" data-d="3">
+          <h3>Premium mensuel</h3>
+          <div class="amount">3,99 € <span class="per">/ mois</span></div>
+          <p>La même chose, sans engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane" id="faq">
+    <div class="wrap">
+      <div class="head rev">
+        <p class="eyebrow">Questions</p>
+        <h2>Ce qu'on nous demande le plus.</h2>
+      </div>
+      <div class="rev" data-d="1">
+        <details>
+          <summary>Slowcial bloque-t-il les réseaux sociaux ?</summary>
+          <p>Non, et c'est volontaire. Slowcial ne coupe pas l'accès : il retire de l'affichage les éléments conçus pour retenir l'attention et laisse tout le reste — messages, profils, publications. Une app qui bloque tout finit désinstallée.</p>
+        </details>
+        <details>
+          <summary>Faut-il te donner mes identifiants ?</summary>
+          <p>Non. Tu te connectes directement au réseau, dans une vue web, exactement comme dans Safari. Slowcial ne lit pas, ne copie pas et ne transmet pas tes identifiants ni le contenu affiché.</p>
+        </details>
+        <details>
+          <summary>Est-ce que mes données partent quelque part ?</summary>
+          <p>Non. Il n'y a ni compte ni serveur. Tes réglages et ton temps d'écran restent sur ton téléphone. Seuls des rapports de plantage anonymes peuvent être envoyés, et tu peux les couper.</p>
+        </details>
+        <details>
+          <summary>Que se passe-t-il si un réseau change son site ?</summary>
+          <p>Le filtrage s'appuie sur la structure des pages, qui évolue sans préavis. Quand une règle cesse de fonctionner, le contenu réapparaît — l'application ne casse jamais la page — et la règle est corrigée dans une mise à jour.</p>
+        </details>
+        <details>
+          <summary>Slowcial est-il affilié aux réseaux qu'il prend en charge ?</summary>
+          <p>Non. Slowcial est un outil indépendant, sans lien avec les services qu'il prend en charge, et n'est ni approuvé ni sponsorisé par eux.</p>
+        </details>
+        <details>
+          <summary>Et sur Android ?</summary>
+          <p>La première version est prévue pour iPhone. Android suivra si l'accueil est au rendez-vous.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="links">
+    <div class="fbrand">slowcial<span>.</span></div>
+    <p class="fline">Ton attention t'appartient.</p>
+    <div class="flinks">
       <a href="confidentialite/">Politique de confidentialité</a>
       <a href="conditions/">Conditions d'utilisation</a>
       <a href="privacy/">Privacy Policy (EN)</a>
       <a href="mailto:contact@slowcial-app.com">contact@slowcial-app.com</a>
+      <a href="#haut">Haut de page</a>
     </div>
-    <div>Slowcial — ton attention t'appartient.</div>
     <p class="fine">
-      Slowcial n'est affilié à, ni approuvé, ni sponsorisé par les services qu'il
-      prend en charge. Les noms cités appartiennent à leurs détenteurs respectifs et
-      sont utilisés à titre descriptif.
+      Slowcial n'est affilié à, ni approuvé, ni sponsorisé par Meta Platforms, Google,
+      ByteDance, X Corp., Reddit ou Snap. Les noms cités appartiennent à leurs
+      détenteurs respectifs et sont employés à titre descriptif. App Store est une
+      marque d'Apple Inc.
     </p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Wordmark : les lettres arrivent une à une, comme à l'ouverture de l'app. */
+  if(!calm){
+    document.querySelectorAll('.brand i').forEach(function(el,i){
+      el.style.animationDelay = (0.12 + i*0.055) + 's';
+    });
+  }
+
+  /* Révélations : un seul observateur, on cesse d'observer après coup. */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:.12});
+  document.querySelectorAll('.rev').forEach(function(el){ io.observe(el); });
+
+  /* Vidéos : chargées seulement à l'approche, et en version légère sur mobile.
+     L'affiche est peinte immédiatement, donc aucun trou visuel pendant ce temps. */
+  var src = matchMedia('(max-width: 800px)').matches ? 'media/hero-mobile.mp4' : 'media/hero.mp4';
+  function boot(v, eager){
+    if(calm || !v) return;
+    var load = function(){
+      if(v.dataset.done) return;
+      v.dataset.done = '1';
+      v.src = src;
+      v.play().then(function(){ v.classList.add('on'); }).catch(function(){});
+    };
+    if(eager){ load(); return; }
+    var o = new IntersectionObserver(function(en){
+      if(en[0].isIntersecting){ load(); o.disconnect(); }
+    }, {rootMargin:'220px'});
+    o.observe(v);
+  }
+  boot(document.getElementById('heroVid'), true);
+  boot(document.getElementById('frameVid'), false);
+
+  /* Compteur : 0 → 30, une seule fois, quand le chiffre entre à l'écran. */
+  var n = document.getElementById('count');
+  if(n && !calm){
+    var co = new IntersectionObserver(function(en){
+      if(!en[0].isIntersecting) return;
+      co.disconnect();
+      var t0 = null, dur = 1100;
+      requestAnimationFrame(function step(ts){
+        if(t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / dur);
+        n.textContent = Math.round(30 * (1 - Math.pow(1 - p, 3)));
+        if(p < 1) requestAnimationFrame(step);
+      });
+    }, {threshold:.6});
+    co.observe(n);
+  }
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slowcial-app.com/sitemap.xml

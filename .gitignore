@@ -1,0 +1,4 @@
+# Rushes d'origine (4K, ~70 Mo) : jamais versionnés. Seules les versions web
+# encodées dans media/ partent dans le dépôt.
+*-uhd_*.mp4
+*.mov
