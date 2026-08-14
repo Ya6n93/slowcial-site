@@ -235,7 +235,15 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var seen = false;
   try { seen = sessionStorage.getItem('sl-intro') === '1'; } catch(e){}
-  if(!calm && !seen){
+
+  /* ?intro (ou #intro) rejoue la séquence : indispensable pour la montrer à
+     quelqu'un ou pour itérer dessus, puisqu'un rechargement ne suffit pas.
+     Demande explicite de l'utilisateur → passe aussi devant « mouvement
+     réduit », qu'on respecte partout ailleurs. */
+  var force = /(^|[?&#])intro(=|&|$)/.test(location.search + location.hash);
+  if(force){ try { sessionStorage.removeItem('sl-intro'); } catch(e){} }
+
+  if((force || !calm) && (force || !seen)){
     document.documentElement.classList.add('pre');
     /* Filet : si le script d'animation ne s'exécutait pas (erreur, blocage),
        `.pre` laisserait le hero invisible. Au-delà de la durée de l'intro, on
