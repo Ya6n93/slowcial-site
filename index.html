@@ -240,7 +240,7 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     /* Filet : si le script d'animation ne s'exécutait pas (erreur, blocage),
        `.pre` laisserait le hero invisible. Au-delà de la durée de l'intro, on
        rend la main quoi qu'il arrive. */
-    setTimeout(function(){ document.documentElement.classList.remove('pre'); }, 7000);
+    setTimeout(function(){ document.documentElement.classList.remove('pre'); }, 9000);
   }
 })();
 </script>
@@ -529,6 +529,19 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
      pendant que l'image apparaît → le titre surgit en grand au centre → il
      rejoint sa place → le reste se révèle.
      ————————————————————————————————————————————————————————————— */
+  /* Durées reprises une à une de l'Animated.sequence de l'app :
+       lettres 950 · pause 560 · wordmark 1500 · titre 600 · pause 750 ·
+       trajet du titre 950 · révélation 560  →  5,87 s au total.
+     SPEED est le seul réglage : 1 = rythme de l'app, 1.2 = 20 % plus lent. */
+  var SPEED = 1;
+  var D = {
+    letter: 304, stagger: 76,        // 8×76 + 304 ≈ 950
+    hold1: 560, travel: 1500,
+    videoIn: 750, videoAt: 520,      // l'image apparaît PENDANT le trajet
+    titleIn: 600, hold2: 750, titleTravel: 950, rest: 560
+  };
+  Object.keys(D).forEach(function(k){ D[k] = Math.round(D[k] * SPEED); });
+
   var hero  = document.querySelector('.hero');
   var brand = document.querySelector('.brand');
   var h1    = document.querySelector('.hero h1');
@@ -579,42 +592,53 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     brand.style.transform  = 'translate('+b.x+'px,'+b.y+'px) scale('+b.s+')';
 
     document.querySelectorAll('.brand i').forEach(function(el,i){
-      el.style.animationDelay = (i*0.055) + 's';
+      el.style.animationDuration = D.letter + 'ms';
+      el.style.animationDelay    = (i * D.stagger) + 'ms';
     });
+
+    /* Repères de la séquence, cumulés — plus lisible que des constantes en dur. */
+    var T0 = (D.stagger * 8) + D.letter,        // fin de la frappe
+        T1 = T0 + D.hold1,                      // départ du wordmark
+        T2 = T1 + D.travel,                     // arrivée dans le coin
+        T3 = T2 + D.titleIn + D.hold2,          // départ du titre vers sa place
+        T4 = T3 + D.titleTravel;                // révélation du reste
 
     requestAnimationFrame(function(){
       brand.classList.add('type');                       // les lettres se tapent
 
-      at(1080, function(){                               // le wordmark file au coin
-        brand.style.transition = 'transform 1.15s cubic-bezier(.62,0,.24,1)';
+      at(T1, function(){                                 // le wordmark file au coin
+        brand.style.transition = 'transform ' + D.travel + 'ms cubic-bezier(.62,0,.24,1)';
         brand.style.transform  = 'none';
-        stage.style.transition = 'opacity 1.05s ease';   // …et l'image apparaît
+      });
+
+      at(T1 + D.videoAt, function(){                     // l'image apparaît en cours de trajet
+        stage.style.transition = 'opacity ' + D.videoIn + 'ms ease';
         stage.style.opacity    = '1';
       });
 
-      at(2320, function(){                               // le titre surgit au centre
+      at(T2, function(){                                 // le titre surgit au centre
         var t = toCenter(h1, 1.42, 44);
         h1.style.transition = 'none';
         h1.style.transform  = 'translate('+t.x+'px,'+t.y+'px) scale('+t.s+')';
         requestAnimationFrame(function(){
-          h1.style.transition = 'opacity .5s ease';
+          h1.style.transition = 'opacity ' + D.titleIn + 'ms ease';
           h1.style.opacity = '1';
         });
       });
 
-      at(3220, function(){                               // …puis rejoint sa place
-        h1.style.transition = 'transform .85s cubic-bezier(.62,0,.24,1)';
+      at(T3, function(){                                 // …puis rejoint sa place
+        h1.style.transition = 'transform ' + D.titleTravel + 'ms cubic-bezier(.62,0,.24,1)';
         h1.style.transform  = 'none';
       });
 
-      at(3950, function(){                               // le reste se révèle
+      at(T4, function(){                                 // le reste se révèle
         after.forEach(function(el){
-          el.style.transition = 'opacity .55s ease';
+          el.style.transition = 'opacity ' + D.rest + 'ms ease';
           el.style.opacity = '1';
         });
       });
 
-      at(4650, finish);
+      at(T4 + D.rest + 120, finish);
     });
   }
 
