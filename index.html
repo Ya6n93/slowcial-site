@@ -91,7 +91,8 @@ h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06
 
 /* ————— HERO : la vidéo porte le problème ————— */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--night);color:var(--cream);overflow:hidden}
-.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.stage{position:absolute;inset:0;z-index:0}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .poster{background:url(media/hero-poster.jpg) center/cover no-repeat}
 /* L'affiche est la PREMIÈRE image de la vidéo : le passage de l'une à l'autre est
    invisible, donc un fondu court suffit (un fondu long sur deux images
@@ -106,10 +107,25 @@ h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06
     linear-gradient(180deg,rgba(12,8,4,.58) 0%,rgba(12,8,4,.10) 30%,rgba(12,8,4,.42) 60%,rgba(12,8,4,.88) 100%),
     radial-gradient(130% 78% at 50% 4%,transparent 42%,rgba(12,8,4,.40) 100%)}
 .hero .wrap{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;padding-top:34px;padding-bottom:38px}
-.brand{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.035em;display:flex}
-.brand i{font-style:normal;opacity:0;transform:translateY(14px);animation:pop .5s cubic-bezier(.2,.8,.3,1) forwards}
+/* `inline-flex` + `align-self` : la boîte épouse le texte. En flex de niveau
+   bloc elle occupait toute la largeur — son centre tombait alors sur celui de
+   l'écran (translation nulle) et le plafond anti-débordement annulait
+   l'agrandissement : l'intro ne partait pas du centre. */
+.brand{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.035em;
+  display:inline-flex;align-self:flex-start}
+.brand i{font-style:normal}
 .brand i:last-child{color:var(--glow)}
-@keyframes pop{to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+
+/* ————— Intro : reprise de la séquence d'ouverture de l'application —————
+   `.pre` est posé par un script en tête de document, donc AVANT le premier
+   rendu : rien ne clignote. Les éléments gardent leur place dans le flux (on ne
+   joue que sur opacity/transform), donc la mise en page finale est déjà celle-là
+   et le texte reste lisible par les moteurs de recherche. */
+.pre .stage,.pre .hero h1,.pre .hero p,.pre .hero-cta,.pre .scroll{opacity:0}
+.pre .brand i{opacity:0}
+.brand.type i{animation:pop .52s cubic-bezier(.2,.8,.3,1) forwards}
+.hero.intro h1,.hero.intro .brand{will-change:transform}
 .hero-mid{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px}
 h1{font-size:clamp(42px,8.2vw,86px);font-weight:800;max-width:15ch}
 h1 em{font-style:normal;color:var(--glow)}
@@ -210,13 +226,36 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
   .hero video{display:none}
 }
 </style>
+
+<script>
+/* Posé AVANT le premier rendu, sinon le hero s'afficherait une fraction de
+   seconde dans son état final avant de repartir au centre. L'intro ne joue
+   qu'une fois par session — comme dans l'app, où `introDone` la verrouille. */
+(function(){
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen = false;
+  try { seen = sessionStorage.getItem('sl-intro') === '1'; } catch(e){}
+  if(!calm && !seen){
+    document.documentElement.classList.add('pre');
+    /* Filet : si le script d'animation ne s'exécutait pas (erreur, blocage),
+       `.pre` laisserait le hero invisible. Au-delà de la durée de l'intro, on
+       rend la main quoi qu'il arrive. */
+    setTimeout(function(){ document.documentElement.classList.remove('pre'); }, 7000);
+  }
+})();
+</script>
 </head>
 <body>
 
 <header class="hero" id="haut">
-  <div class="poster" aria-hidden="true"></div>
-  <video id="heroVid" muted loop playsinline preload="none" poster="media/hero-poster.jpg"
-         aria-label="Une foule de personnes dans l'obscurité, chacune éclairée par l'écran de son téléphone"></video>
+  <!-- L'image et la vidéo sont dans un même calque : pendant l'intro, l'écran
+       part du noir absolu et ce calque apparaît en fondu — exactement comme à
+       l'ouverture de l'application. -->
+  <div class="stage" id="stage">
+    <div class="poster" aria-hidden="true"></div>
+    <video id="heroVid" muted loop playsinline preload="none" poster="media/hero-poster.jpg"
+           aria-label="Une foule de personnes dans l'obscurité, chacune éclairée par l'écran de son téléphone"></video>
+  </div>
   <div class="wrap">
     <div class="brand" aria-label="slowcial">
       <i>s</i><i>l</i><i>o</i><i>w</i><i>c</i><i>i</i><i>a</i><i>l</i><i>.</i>
@@ -475,11 +514,107 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
 <script>
 (function(){
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
 
-  /* Wordmark : les lettres arrivent une à une, comme à l'ouverture de l'app. */
-  if(!calm){
+  /* ——————————————————————————————————————————————————————————————
+     INTRO — transposition de la séquence d'ouverture de l'application
+     (src/app/onboarding/index.tsx).
+
+     Même principe que l'app : on MESURE la position de repos de l'élément,
+     on calcule le décalage qui l'amène au centre de l'écran, on l'y projette
+     agrandi, puis on laisse la transition le ramener à zéro. L'élément ne
+     bouge jamais dans le flux — seul son `transform` change.
+
+     Déroulé : les lettres se tapent au centre → le wordmark file dans le coin
+     pendant que l'image apparaît → le titre surgit en grand au centre → il
+     rejoint sa place → le reste se révèle.
+     ————————————————————————————————————————————————————————————— */
+  var hero  = document.querySelector('.hero');
+  var brand = document.querySelector('.brand');
+  var h1    = document.querySelector('.hero h1');
+  var after = [document.querySelector('.hero p'), document.querySelector('.hero-cta'), document.querySelector('.scroll')];
+  var stage = document.getElementById('stage');
+  var timers = [], done = false;
+
+  /* Décalage à appliquer pour amener le centre de l'élément au centre de
+     l'écran, avec un agrandissement plafonné pour ne jamais déborder —
+     l'app fait exactement ce calcul (`fitScale`). */
+  function toCenter(el, wanted, margin){
+    var r = el.getBoundingClientRect();
+    return {
+      x: innerWidth/2  - (r.left + r.width/2),
+      y: innerHeight/2 - (r.top  + r.height/2),
+      s: Math.min(wanted, (innerWidth - (margin||48)) / r.width)
+    };
+  }
+  var at = function(ms, fn){ timers.push(setTimeout(fn, ms)); };
+
+  /* Fin de l'intro — appelée par la séquence OU par la moindre interaction :
+     on ne retient personne devant une animation. */
+  function finish(){
+    if(done) return;
+    done = true;
+    timers.forEach(clearTimeout);
+    root.classList.remove('pre');
+    hero.classList.remove('intro');
+    [brand, h1].forEach(function(el){ el.style.transition = ''; el.style.transform = ''; el.style.opacity = ''; });
+    after.forEach(function(el){ el.style.transition = ''; el.style.opacity = ''; });
+    stage.style.opacity = '';
+    document.body.style.overflow = '';
+    try { sessionStorage.setItem('sl-intro','1'); } catch(e){}
+  }
+
+  if(root.classList.contains('pre')){
+    hero.classList.add('intro');
+    /* Le défilement est neutralisé le temps de l'intro : les positions sont
+       calculées par rapport à l'écran, un défilement les décalerait. Toute
+       interaction rend la main immédiatement. */
+    document.body.style.overflow = 'hidden';
+    ['wheel','touchstart','keydown','pointerdown'].forEach(function(ev){
+      addEventListener(ev, finish, {once:true, passive:true});
+    });
+
+    var b = toCenter(brand, 2.05, 60);
+    brand.style.transition = 'none';
+    brand.style.transform  = 'translate('+b.x+'px,'+b.y+'px) scale('+b.s+')';
+
     document.querySelectorAll('.brand i').forEach(function(el,i){
-      el.style.animationDelay = (0.12 + i*0.055) + 's';
+      el.style.animationDelay = (i*0.055) + 's';
+    });
+
+    requestAnimationFrame(function(){
+      brand.classList.add('type');                       // les lettres se tapent
+
+      at(1080, function(){                               // le wordmark file au coin
+        brand.style.transition = 'transform 1.15s cubic-bezier(.62,0,.24,1)';
+        brand.style.transform  = 'none';
+        stage.style.transition = 'opacity 1.05s ease';   // …et l'image apparaît
+        stage.style.opacity    = '1';
+      });
+
+      at(2320, function(){                               // le titre surgit au centre
+        var t = toCenter(h1, 1.42, 44);
+        h1.style.transition = 'none';
+        h1.style.transform  = 'translate('+t.x+'px,'+t.y+'px) scale('+t.s+')';
+        requestAnimationFrame(function(){
+          h1.style.transition = 'opacity .5s ease';
+          h1.style.opacity = '1';
+        });
+      });
+
+      at(3220, function(){                               // …puis rejoint sa place
+        h1.style.transition = 'transform .85s cubic-bezier(.62,0,.24,1)';
+        h1.style.transform  = 'none';
+      });
+
+      at(3950, function(){                               // le reste se révèle
+        after.forEach(function(el){
+          el.style.transition = 'opacity .55s ease';
+          el.style.opacity = '1';
+        });
+      });
+
+      at(4650, finish);
     });
   }
 
