@@ -16,4 +16,4 @@ recommandation, et garde les messages et les profils.
 
 ## Contact
 
-REMPLACER@exemple.com
+contact@slowcial-app.com

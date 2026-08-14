@@ -107,4 +107,4 @@ annoncé dans l'application avant d'entrer en vigueur.
 
 ## Contact
 
-Une question : **REMPLACER@exemple.com**
+Une question : **contact@slowcial-app.com**

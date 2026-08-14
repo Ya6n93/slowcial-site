@@ -105,4 +105,4 @@ before taking effect.
 
 ## Contact
 
-Questions: **REPLACE@example.com**
+Questions: **contact@slowcial-app.com**

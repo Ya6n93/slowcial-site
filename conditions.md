@@ -77,4 +77,4 @@ page, à la date indiquée en haut.
 ## 9. Droit applicable et contact
 
 Ces conditions sont régies par le droit français. Contact :
-**REMPLACER@exemple.com**
+**contact@slowcial-app.com**
