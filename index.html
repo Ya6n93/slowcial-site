@@ -127,13 +127,22 @@ h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06
 .brand.type i{animation:pop .52s cubic-bezier(.2,.8,.3,1) forwards}
 .hero.intro h1,.hero.intro .brand{will-change:transform}
 .hero-mid{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px}
-h1{font-size:clamp(42px,8.2vw,86px);font-weight:800;max-width:15ch}
+h1{font-size:clamp(42px,8.2vw,86px);font-weight:800;max-width:min(15ch,100%)}
 h1 em{font-style:normal;color:var(--glow)}
-.hero p{margin-top:22px;font-size:clamp(18px,2.3vw,22px);color:rgba(245,238,223,.88);max-width:38ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px}
-.badge{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1.5px solid rgba(245,238,223,.3);border-radius:999px;font-size:14.5px;font-weight:500;color:rgba(245,238,223,.9)}
-.badge b{width:7px;height:7px;border-radius:50%;background:var(--glow);animation:blink 2.6s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.32}}
+.hero p{margin-top:22px;font-size:clamp(18px,2.3vw,22px);color:rgba(245,238,223,.88);max-width:min(38ch,100%)}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:15px;margin-top:34px}
+/* Gabarit officiel des badges de store : 54 px de haut, coins arrondis, une
+   petite ligne au-dessus d'un intitulé plus gros. Le glyphe est un simple
+   téléchargement — pas de pomme, pas de triangle Play. */
+.stores{display:flex;flex-wrap:wrap;gap:12px}
+.store{display:inline-flex;align-items:center;gap:11px;height:54px;padding:0 18px;
+  border:1.5px solid rgba(245,238,223,.42);border-radius:11px;background:rgba(12,8,4,.55);
+  color:var(--cream);backdrop-filter:blur(3px);white-space:nowrap}
+.store svg{width:21px;height:21px;flex:none;fill:none;stroke:var(--cream);stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+.store-txt{display:flex;flex-direction:column;line-height:1.12}
+.store-txt small{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(245,238,223,.66)}
+.store-txt b{font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.02em}
 .hero-note{font-size:14px;color:rgba(245,238,223,.55)}
 .scroll{display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,223,.5);margin-top:40px}
 .scroll span{display:block;width:34px;height:1px;background:rgba(245,238,223,.4);animation:slide 2.4s ease-in-out infinite}
@@ -143,7 +152,7 @@ h1 em{font-style:normal;color:var(--glow)}
 .stat{padding:96px 0 84px;text-align:center}
 .stat .num{font-size:clamp(78px,17vw,190px);font-weight:800;color:var(--terra);line-height:.86;letter-spacing:-.05em}
 .stat .unit{font-family:var(--display);font-size:clamp(20px,3.4vw,30px);font-weight:600;color:var(--ink);margin-top:10px}
-.stat p{max-width:44ch;margin:22px auto 0;color:var(--ink2)}
+.stat p{max-width:min(44ch,100%);margin:22px auto 0;color:var(--ink2)}
 
 /* ————— Fenêtre : la vidéo revient, encadrée, comme un souvenir ————— */
 .window{padding:0 0 96px}
@@ -154,11 +163,11 @@ h1 em{font-style:normal;color:var(--glow)}
 .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,8,4,.15),rgba(12,8,4,.72))}
 .frame figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,4vw,40px);
   font-family:var(--display);font-weight:600;font-size:clamp(21px,3.6vw,38px);color:var(--cream);line-height:1.16;letter-spacing:-.03em}
-.frame figcaption small{display:block;margin-top:12px;font-family:var(--body);font-weight:400;font-size:clamp(14px,1.7vw,17px);color:rgba(245,238,223,.72);max-width:46ch;letter-spacing:0}
+.frame figcaption small{display:block;margin-top:12px;font-family:var(--body);font-weight:400;font-size:clamp(14px,1.7vw,17px);color:rgba(245,238,223,.72);max-width:min(46ch,100%);letter-spacing:0}
 
 /* ————— Sections papier ————— */
 section.pane{padding:88px 0;border-top:1px solid var(--line)}
-.head{max-width:62ch;margin-bottom:38px}
+.head{max-width:min(62ch,100%);margin-bottom:38px}
 .head h2{font-size:clamp(28px,4.6vw,44px);margin-top:12px}
 .head p{margin-top:16px;color:var(--ink2)}
 .grid{display:grid;gap:18px}
@@ -179,9 +188,9 @@ section.pane{padding:88px 0;border-top:1px solid var(--line)}
 .net{padding:10px 17px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);
   font-weight:500;font-size:15.5px;transition:border-color .25s,transform .25s}
 .net:hover{border-color:var(--terra);transform:translateY(-2px)}
-.quote{font-family:var(--display);font-weight:500;font-size:clamp(23px,3.9vw,40px);line-height:1.24;max-width:20ch;letter-spacing:-.03em}
+.quote{font-family:var(--display);font-weight:500;font-size:clamp(23px,3.9vw,40px);line-height:1.24;max-width:min(20ch,100%);letter-spacing:-.03em}
 .quote em{font-style:normal;color:var(--terra)}
-.aside{color:var(--ink2);max-width:50ch}
+.aside{color:var(--ink2);max-width:min(50ch,100%)}
 .split{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:start}
 
 /* Tarifs — à réconcilier avec le gating réel avant publication. */
@@ -201,17 +210,17 @@ summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:60
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--terra);font-size:22px;line-height:1;transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
-details p{margin-top:13px;color:var(--ink2);max-width:64ch}
+details p{margin-top:13px;color:var(--ink2);max-width:min(64ch,100%)}
 
 footer{background:var(--night);color:rgba(245,238,223,.72);padding:74px 0 44px;font-size:15.5px}
 footer .fbrand{font-family:var(--display);font-weight:800;font-size:26px;color:var(--cream);letter-spacing:-.035em}
 footer .fbrand span{color:var(--glow)}
 footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.6vw,34px);color:var(--cream);
-  margin:26px 0 40px;max-width:18ch;letter-spacing:-.03em;line-height:1.15}
+  margin:26px 0 40px;max-width:min(18ch,100%);letter-spacing:-.03em;line-height:1.15}
 .flinks{display:flex;flex-wrap:wrap;gap:12px 26px;padding-top:26px;border-top:1px solid rgba(245,238,223,.16)}
 .flinks a{text-decoration:none;border-bottom:1px solid rgba(245,238,223,.3);padding-bottom:2px}
 .flinks a:hover{border-color:var(--glow);color:var(--cream)}
-.fine{margin-top:26px;font-size:13px;color:rgba(245,238,223,.46);max-width:66ch}
+.fine{margin-top:26px;font-size:13px;color:rgba(245,238,223,.46);max-width:min(66ch,100%)}
 
 @media (max-width:640px){
   body{font-size:16.5px}
@@ -222,7 +231,7 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
   html{scroll-behavior:auto}
   .rev{opacity:1;transform:none;transition:none}
   .brand i{opacity:1;transform:none;animation:none}
-  .badge b,.scroll span{animation:none}
+  .scroll span{animation:none}
   .hero video{display:none}
 }
 </style>
@@ -272,9 +281,24 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     <div class="hero-mid">
       <h1><em>Ralentis</em> sur les réseaux.</h1>
       <p>Garde tes messages et tes profils. Slowcial retire ce qui est conçu pour te retenir.</p>
+      <!-- Badges au format officiel (180×54, deux lignes), mais SANS les marques
+           Apple et Google : leurs chartes réservent le badge aux applications
+           réellement publiées. Le jour du lancement, remplacer chaque <span
+           class="store"> par un <a href="…"> portant l'image officielle :
+             Apple  → https://developer.apple.com/app-store/marketing/guidelines/
+             Google → https://play.google.com/intl/en_us/badges/            -->
       <div class="hero-cta">
-        <span class="badge"><b></b> Bientôt sur l'App Store</span>
-        <span class="hero-note">iPhone · 8 langues · sans compte</span>
+        <div class="stores">
+          <span class="store" aria-label="Bientôt disponible sur l'App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <span class="store-txt"><small>Bientôt sur</small><b>l'App Store</b></span>
+          </span>
+          <span class="store" aria-label="Bientôt disponible sur Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <span class="store-txt"><small>Bientôt sur</small><b>Google Play</b></span>
+          </span>
+        </div>
+        <span class="hero-note">Pour iPhone · sans compte · 8 langues</span>
       </div>
       <div class="scroll"><span></span> Fais défiler</div>
     </div>
