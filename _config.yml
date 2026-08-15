@@ -1,5 +1,7 @@
-# Aucun thème : les thèmes GitHub Pages injectent un bandeau « View the Project
-# on GitHub » vers le dépôt. Les pages légales utilisent _layouts/legal.html.
+# Volontairement SANS thème : les thèmes fournis injectent dans chaque page un
+# bandeau renvoyant vers le dépôt d'hébergement. Aucune page publique de
+# Slowcial ne doit exposer où elle est hébergée. Les pages légales utilisent
+# _layouts/legal.html, écrit à la main.
 title: Slowcial
 description: Tes réseaux, en plus calme.
 lang: fr
