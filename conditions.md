@@ -1,6 +1,8 @@
 ---
 title: "Conditions d'utilisation — Slowcial"
 permalink: /conditions/
+layout: legal
+lang: fr
 ---
 
 # Conditions d'utilisation — Slowcial

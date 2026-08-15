@@ -1,7 +1,5 @@
-# Site public de Slowcial : uniquement les pages légales (et, plus tard, le
-# fichier de règles de filtrage si on active les correctifs à chaud).
-# AUCUN code de l'application ici — la base de code reste dans le dépôt privé.
+# Aucun thème : les thèmes GitHub Pages injectent un bandeau « View the Project
+# on GitHub » vers le dépôt. Les pages légales utilisent _layouts/legal.html.
 title: Slowcial
 description: Tes réseaux, en plus calme.
-theme: jekyll-theme-minimal
 lang: fr

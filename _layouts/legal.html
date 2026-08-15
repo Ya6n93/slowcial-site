@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  Gabarit des pages légales.
+
+  Écrit à la main plutôt que d'utiliser un thème Jekyll : les thèmes fournis
+  affichent un bandeau « View the Project on GitHub » renvoyant vers le dépôt.
+  Aucune page publique de Slowcial ne doit faire référence à son hébergement.
+  Bonus : ces pages ont désormais l'identité du site au lieu d'un habillage
+  générique.
+-->
+<html lang="{{ page.lang | default: 'fr' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/media/icon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/media/icon-180.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#3B2A1E; --ink2:#8A7B67; --paper:#F4EDDE; --card:#FCF7EC; --line:#DED2B8;
+  --terra:#B5522E; --night:#251C12; --cream:#F5EEDF;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.68}
+.bar{background:var(--night);padding:20px 0}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 26px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.035em;
+  color:var(--cream);text-decoration:none;display:inline-block}
+.brand span{color:#E0895B}
+main{padding:52px 0 64px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,5.5vw,44px);letter-spacing:-.03em;
+  line-height:1.1;margin-bottom:8px}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(20px,3.2vw,26px);letter-spacing:-.02em;
+  margin:38px 0 12px}
+h3{font-family:var(--display);font-weight:600;font-size:19px;margin:26px 0 10px}
+p,li{max-width:min(68ch,100%)}
+p{margin:14px 0}
+ul,ol{margin:14px 0 14px 22px}
+li{margin:7px 0}
+strong{font-weight:600}
+a{color:var(--terra);text-underline-offset:3px}
+hr{border:0;border-top:1px solid var(--line);margin:38px 0}
+code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 5px;font-size:15px}
+table{border-collapse:collapse;margin:16px 0;width:100%}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;font-size:16px}
+th{background:var(--card);font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--ink2);font-size:15px}
+footer a{color:var(--ink)}
+.back{display:inline-block;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">slowcial<span>.</span></a>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    {{ content }}
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="back" href="{{ '/' | relative_url }}">← Slowcial</a>
+    <p>contact@slowcial-app.com</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,6 +1,8 @@
 ---
 title: "Privacy Policy — Slowcial"
 permalink: /privacy/
+layout: legal
+lang: en
 ---
 
 # Privacy Policy — Slowcial

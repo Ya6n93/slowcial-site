@@ -1,6 +1,8 @@
 ---
 title: "Politique de confidentialité — Slowcial"
 permalink: /confidentialite/
+layout: legal
+lang: fr
 ---
 
 # Politique de confidentialité — Slowcial
