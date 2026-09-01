@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "filters": {
     "youtube": [
       {
@@ -108,12 +108,92 @@
         "rule": {
           "text": [
             {
-              "text": "Sponsored",
+              "text": "Sponsoris",
+              "contains": true,
               "container": "article",
               "keep": true
             },
             {
-              "text": "Sponsorisé",
+              "text": "Sponsored",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Gesponsert",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Patrocinad",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Sponsorizzat",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Sponsorowane",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Gesponsord",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Publicité",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Publicidad",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Publicidade",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Pubblicità",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Reklama",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Werbung",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Advertentie",
+              "contains": true,
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Advertisement",
+              "contains": true,
               "container": "article",
               "keep": true
             }
@@ -310,7 +390,7 @@
               "container": ".displayed"
             },
             {
-              "text": "Patrocinado",
+              "text": "Patrocinad",
               "contains": true,
               "container": ".displayed"
             },
@@ -326,6 +406,46 @@
             },
             {
               "text": "Gesponsord",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Publicité",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Publicidad",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Publicidade",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Pubblicità",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Reklama",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Werbung",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Advertentie",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Advertisement",
               "contains": true,
               "container": ".displayed"
             }
@@ -353,6 +473,111 @@
             },
             {
               "text": "Promu",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Beworben",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Promocionad",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Sponsorizzat",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Promowane",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Promovido",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Gepromoot",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Sponsoris",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Sponsored",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Gesponsert",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Patrocinad",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Sponsorizzat",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Sponsorowane",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Gesponsord",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Publicité",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Publicidad",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Publicidade",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Pubblicità",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Reklama",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Werbung",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Advertentie",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Advertisement",
               "contains": true,
               "container": "shreddit-post"
             }
@@ -409,22 +634,12 @@
         "rule": {
           "text": [
             {
+              "text": "Sponsoris",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
               "text": "Sponsored",
-              "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
-            },
-            {
-              "text": "Sponsorisé",
-              "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
-            },
-            {
-              "text": "Sponsorizzato",
-              "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
-            },
-            {
-              "text": "Patrocinado",
               "contains": true,
               "container": "div[data-e2e=\"recommend-list-item-container\"]"
             },
@@ -434,7 +649,62 @@
               "container": "div[data-e2e=\"recommend-list-item-container\"]"
             },
             {
+              "text": "Patrocinad",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Sponsorizzat",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Sponsorowane",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
               "text": "Gesponsord",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Publicité",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Publicidad",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Publicidade",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Pubblicità",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Reklama",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Werbung",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Advertentie",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Advertisement",
               "contains": true,
               "container": "div[data-e2e=\"recommend-list-item-container\"]"
             }
@@ -442,7 +712,34 @@
         }
       }
     ],
-    "snapchat": []
+    "snapchat": [
+      {
+        "key": "reels",
+        "defaultOn": true,
+        "free": true,
+        "rule": {
+          "css": [
+            "a[aria-label=\"SPOTLIGHT\"]",
+            "a[data-label=\"SPOTLIGHT\"]",
+            "a[href*=\"/spotlight\"]",
+            "a[aria-label=\"POST_TO_SPOTLIGHT\"]",
+            "a[data-label=\"POST_TO_SPOTLIGHT\"]"
+          ]
+        }
+      },
+      {
+        "key": "explore",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            "[data-testid=\"SnapchatDotCom_ExploreTiles\"]",
+            "[data-testid=\"SnapchatDotCom_ExploreTiles_Local\"]",
+            "a[href*=\"/entertainment/\"]",
+            "a[href=\"/local\"]"
+          ]
+        }
+      }
+    ]
   },
   "cleanup": {
     "instagram": {
@@ -661,6 +958,12 @@
           "contains": true,
           "container": "[role=\"link\"]"
         }
+      ]
+    },
+    "snapchat": {
+      "css": [
+        "[data-testid=\"ConsumerNav_DownloadButton\"]",
+        "[data-testid=\"SnapchatDotCom_DownloadButton\"]"
       ]
     }
   },
