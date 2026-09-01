@@ -1,0 +1,681 @@
+{
+  "version": 1,
+  "filters": {
+    "youtube": [
+      {
+        "key": "shorts",
+        "defaultOn": true,
+        "free": true,
+        "rule": {
+          "css": [
+            "ytd-reel-shelf-renderer",
+            "ytm-reel-shelf-renderer",
+            "ytm-reel-item-renderer",
+            "ytd-rich-shelf-renderer[is-shorts]",
+            "ytm-shorts-lockup-view-model",
+            "ytm-shorts-lockup-view-model-v2",
+            "ytm-rich-section-renderer:has([href^=\"/shorts\"])",
+            "ytm-rich-item-renderer:has([href^=\"/shorts\"])",
+            "ytm-item-section-renderer:has(ytm-reel-shelf-renderer)",
+            "ytm-item-section-renderer:has([href^=\"/shorts\"])",
+            "ytm-pivot-bar-item-renderer:has(.pivot-shorts)",
+            ".pivot-bar-item-tab.pivot-shorts",
+            "ytm-pivot-bar-item-renderer:has(a[href=\"/shorts\"])",
+            "ytd-guide-entry-renderer:has(a[title=\"Shorts\"])",
+            "ytd-mini-guide-entry-renderer:has(a[title=\"Shorts\"])",
+            "a[href^=\"/shorts\"]",
+            "a[title=\"Shorts\"]"
+          ]
+        }
+      },
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            ".ytp-ad-module",
+            ".video-ads",
+            ".ytp-ad-overlay-container",
+            "#player-ads",
+            "#masthead-ad",
+            "ytd-promoted-video-renderer",
+            "ytd-ad-slot-renderer",
+            "ytd-in-feed-ad-layout-renderer",
+            "ad-slot-renderer",
+            "ytm-promoted-video-renderer",
+            "ytm-compact-promoted-video-renderer",
+            "ytm-companion-ad-renderer",
+            "ytm-promoted-sparkles-web-renderer",
+            "ytm-rich-item-renderer:has(ad-slot-renderer)",
+            "ytm-rich-item-renderer:has(ytm-promoted-video-renderer)",
+            "ytm-item-section-renderer:has(ad-slot-renderer)"
+          ]
+        }
+      }
+    ],
+    "instagram": [
+      {
+        "key": "reels",
+        "defaultOn": true,
+        "free": true,
+        "rule": {
+          "css": [
+            "a[href=\"/reels/\"]",
+            "div[role=\"tab\"][aria-label*=\"Reels\"]"
+          ]
+        }
+      },
+      {
+        "key": "sugg",
+        "defaultOn": false,
+        "rule": {
+          "switch": [
+            {
+              "labels": [
+                "Pour vous",
+                "For You",
+                "For you",
+                "Für dich",
+                "Para ti",
+                "Per te",
+                "Dla Ciebie",
+                "Para você",
+                "Voor jou"
+              ]
+            },
+            {
+              "sel": "[role=\"dialog\"] a[role=\"link\"]"
+            }
+          ],
+          "css": [
+            "header a[href=\"/\"]"
+          ]
+        }
+      },
+      {
+        "key": "explore",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            "a[href=\"/explore/\"]",
+            "div[role=\"tab\"][aria-label*=\"Explore\"]"
+          ]
+        }
+      },
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "text": [
+            {
+              "text": "Sponsored",
+              "container": "article",
+              "keep": true
+            },
+            {
+              "text": "Sponsorisé",
+              "container": "article",
+              "keep": true
+            }
+          ]
+        }
+      }
+    ],
+    "x": [
+      {
+        "key": "sugg",
+        "defaultOn": false,
+        "free": true,
+        "rule": {
+          "switch": [
+            {
+              "labels": [
+                "Suivi(e)",
+                "Suivi",
+                "Suivis",
+                "Suivi(e)s",
+                "Abonnements",
+                "Following",
+                "Abonniert",
+                "Gefolgt",
+                "Folge ich",
+                "Siguiendo",
+                "Seguiti",
+                "Obserwowani",
+                "A seguir",
+                "Seguindo",
+                "Volgend",
+                "Gevolgd"
+              ]
+            }
+          ],
+          "text": [
+            {
+              "text": "Pour vous",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "For You",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "For you",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Für dich",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Para ti",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Per te",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Dla Ciebie",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Para você",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Voor jou",
+              "container": "[role=\"tab\"]"
+            },
+            {
+              "text": "Who to follow",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "You might like",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "À suivre",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Qui suivre",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Wem folgen",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "A quién seguir",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Chi seguire",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Kogo obserwować",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Quem seguir",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Wie te volgen",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "What's happening",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            },
+            {
+              "text": "Tendances pour vous",
+              "contains": true,
+              "container": "div[data-testid=\"cellInnerDiv\"]"
+            }
+          ]
+        }
+      },
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            "article:has([data-testid=\"placementTracking\"])",
+            "div[data-testid=\"cellInnerDiv\"]:has([data-testid=\"placementTracking\"])"
+          ]
+        }
+      },
+      {
+        "key": "explore",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            "a[href=\"/explore\"]",
+            "[data-testid=\"AppTabBar_Explore_Link\"]",
+            "nav a[href=\"/explore\"]"
+          ]
+        }
+      }
+    ],
+    "facebook": [
+      {
+        "key": "reels",
+        "defaultOn": true,
+        "free": true,
+        "rule": {
+          "css": [
+            "a[href*=\"/reel/\"]",
+            "[role=\"tab\"][aria-label*=\"reels\" i]"
+          ],
+          "text": [
+            {
+              "text": "Reels",
+              "container": ".displayed"
+            }
+          ]
+        }
+      },
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "text": [
+            {
+              "text": "Sponsoris",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Sponsored",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Gesponsert",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Patrocinado",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Sponsorizzat",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Sponsorowane",
+              "contains": true,
+              "container": ".displayed"
+            },
+            {
+              "text": "Gesponsord",
+              "contains": true,
+              "container": ".displayed"
+            }
+          ]
+        }
+      }
+    ],
+    "reddit": [
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "css": [
+            "shreddit-ad-post",
+            "shreddit-comments-page-ad",
+            "shreddit-post[promoted]",
+            "[data-promoted=\"true\"]",
+            "ad-metadata"
+          ],
+          "text": [
+            {
+              "text": "Promoted",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Promu",
+              "contains": true,
+              "container": "shreddit-post"
+            }
+          ]
+        }
+      },
+      {
+        "key": "sugg",
+        "defaultOn": false,
+        "free": true,
+        "rule": {
+          "css": [
+            "shreddit-recommended-communities",
+            "recommended-communities",
+            "community-highlight-carousel"
+          ],
+          "text": [
+            {
+              "text": "Recommended for you",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Recommandé pour vous",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Popular communities",
+              "contains": true,
+              "container": "shreddit-post"
+            },
+            {
+              "text": "Communautés populaires",
+              "contains": true,
+              "container": "shreddit-post"
+            }
+          ]
+        }
+      }
+    ],
+    "tiktok": [
+      {
+        "key": "sugg",
+        "defaultOn": false,
+        "free": true,
+        "rule": {
+          "switchUrl": "https://www.tiktok.com/following"
+        }
+      },
+      {
+        "key": "ads",
+        "defaultOn": false,
+        "rule": {
+          "text": [
+            {
+              "text": "Sponsored",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Sponsorisé",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Sponsorizzato",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Patrocinado",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Gesponsert",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            },
+            {
+              "text": "Gesponsord",
+              "contains": true,
+              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+            }
+          ]
+        }
+      }
+    ],
+    "snapchat": []
+  },
+  "cleanup": {
+    "instagram": {
+      "text": [
+        {
+          "text": "Utiliser l'application",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Utiliser l’application",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Ouvrir l'application",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Ouvrir l’application",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Ouvrir Instagram",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Use the app",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Open the app",
+          "container": "a, button, [role=\"button\"]"
+        },
+        {
+          "text": "Open Instagram",
+          "container": "a, button, [role=\"button\"]"
+        }
+      ]
+    },
+    "x": {
+      "text": [
+        {
+          "text": "Never miss",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Ne manquez rien",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Ne rate rien",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Verpasse nie",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "No te pierdas",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Non perderti",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Nie przegap",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Não percas",
+          "contains": true,
+          "up": 3
+        },
+        {
+          "text": "Mis nooit",
+          "contains": true,
+          "up": 3
+        }
+      ]
+    },
+    "facebook": {
+      "css": [
+        "[role=\"tab\"][aria-label*=\"messages\" i]",
+        "#unsupported-interstitial"
+      ],
+      "text": [
+        {
+          "text": "Installez Facebook",
+          "contains": true,
+          "bar": true
+        },
+        {
+          "text": "Install Facebook",
+          "contains": true,
+          "bar": true
+        },
+        {
+          "text": "Obtenir Facebook",
+          "contains": true,
+          "bar": true
+        },
+        {
+          "text": "Get Facebook",
+          "contains": true,
+          "bar": true
+        },
+        {
+          "text": "Ouvrir l’application",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Ouvrir l'application",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Open the app",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "App öffnen",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Abrir la aplicación",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Apri l’app",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Otwórz aplikację",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "Abrir a aplicação",
+          "contains": true,
+          "container": ".fixed-container"
+        },
+        {
+          "text": "App openen",
+          "contains": true,
+          "container": ".fixed-container"
+        }
+      ]
+    },
+    "reddit": {
+      "css": [
+        "#xpromo-small-header",
+        "#open-app-header-cta",
+        "[bundlename*=\"xpromo\"]"
+      ]
+    },
+    "tiktok": {
+      "css": [
+        "#login-modal",
+        "[data-e2e=\"middle-cta-container\"]",
+        "[data-e2e=\"middle-cta-title\"]",
+        "body > div:has([data-e2e=\"bottom-cta-title\"])",
+        "[data-e2e=\"bottom-cta-title\"]",
+        "[class*=\"DivOpenTikTokButtonWrapper\"]",
+        "[class*=\"ButtonCTAOpenApp\"]"
+      ],
+      "text": [
+        {
+          "text": "application TikTok",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "TikTok app",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "TikTok-App",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "TikTok-app",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "aplicación de TikTok",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "app di TikTok",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "aplikacji TikTok",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        },
+        {
+          "text": "aplicação TikTok",
+          "contains": true,
+          "container": "[role=\"link\"]"
+        }
+      ]
+    }
+  },
+  "common": {
+    "css": [
+      "a[href*=\"apps.apple.com\"]",
+      "a[href*=\"itunes.apple.com\"]",
+      "a[href*=\"play.google.com\"]",
+      "a[href^=\"intent:\"]",
+      "a[href^=\"fb://\"]",
+      "a[href^=\"instagram://\"]",
+      "a[href^=\"twitter://\"]",
+      "a[href^=\"snssdk\"]",
+      "a[href^=\"reddit://\"]",
+      "a[href^=\"vnd.youtube:\"]"
+    ]
+  }
+}
