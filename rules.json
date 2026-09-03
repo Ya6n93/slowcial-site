@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "filters": {
     "youtube": [
       {
@@ -20,12 +20,20 @@
             "ytm-item-section-renderer:has([href^=\"/shorts\"])",
             "ytm-pivot-bar-item-renderer:has(.pivot-shorts)",
             ".pivot-bar-item-tab.pivot-shorts",
+            "ytm-pivot-bar-item-renderer:has(.pivot-bar-item-tab.shorts)",
             "ytm-pivot-bar-item-renderer:has(a[href=\"/shorts\"])",
             "ytd-guide-entry-renderer:has(a[title=\"Shorts\"])",
             "ytd-mini-guide-entry-renderer:has(a[title=\"Shorts\"])",
             "a[href^=\"/shorts\"]",
             "a[title=\"Shorts\"]"
           ]
+        }
+      },
+      {
+        "key": "sugg",
+        "defaultOn": false,
+        "rule": {
+          "switchUrl": "https://m.youtube.com/feed/subscriptions"
         }
       },
       {
