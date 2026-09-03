@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "filters": {
     "youtube": [
       {
@@ -40,6 +40,12 @@
         "key": "ads",
         "defaultOn": false,
         "rule": {
+          "pruneKeys": [
+            "adPlacements",
+            "playerAds",
+            "adSlots",
+            "adBreakHeartbeatParams"
+          ],
           "css": [
             ".ytp-ad-module",
             ".video-ads",
