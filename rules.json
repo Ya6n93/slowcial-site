@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "filters": {
     "youtube": [
       {
@@ -650,77 +650,140 @@
             {
               "text": "Sponsoris",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Sponsored",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Gesponsert",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Patrocinad",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Sponsorizzat",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Sponsorowane",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Gesponsord",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Publicité",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Publicidad",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Publicidade",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Pubblicità",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Reklama",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Werbung",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Advertentie",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             },
             {
               "text": "Advertisement",
               "contains": true,
-              "container": "div[data-e2e=\"recommend-list-item-container\"]"
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Contenu promotionnel",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Promotional content",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Contenido promocional",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Conteúdo promocional",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Contenuto promozionale",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Gesponserte Inhalte",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Promotionele inhoud",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
+            },
+            {
+              "text": "Treść promocyjna",
+              "contains": true,
+              "container": "[data-e2e^=\"video-slide\"]",
+              "keep": true
             }
           ]
         }
