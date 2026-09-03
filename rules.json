@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "filters": {
     "youtube": [
       {
@@ -856,6 +856,9 @@
       ]
     },
     "x": {
+      "css": [
+        "[role=\"dialog\"]:has(a[href*=\"launch_app_store\"])"
+      ],
       "text": [
         {
           "text": "Never miss",
