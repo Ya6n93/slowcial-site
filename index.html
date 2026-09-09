@@ -42,13 +42,14 @@
   "description":"Application de bien-être numérique qui retire les vidéos courtes, les fils de recommandation et les pages de découverte des réseaux sociaux, et conserve les messages et les profils.",
   "url":"https://slowcial-app.com/","publisher":{"@id":"https://slowcial-app.com/#org"},
   "offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Un réseau filtré, gratuitement"},
-            {"@type":"Offer","price":"39.90","priceCurrency":"EUR","description":"Premium annuel — filtrage illimité"}]},
+            {"@type":"Offer","price":"34.99","priceCurrency":"EUR","description":"Premium annuel — filtrage illimité"},
+            {"@type":"Offer","price":"4.99","priceCurrency":"EUR","description":"Premium mensuel — filtrage illimité"}]},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Slowcial bloque-t-il les réseaux sociaux ?","acceptedAnswer":{"@type":"Answer","text":"Non. Slowcial ne bloque rien et ne coupe pas l'accès. Il retire de l'affichage les éléments conçus pour retenir l'attention — vidéos courtes, fils de recommandation, pages de découverte — et laisse le reste intact : messages, profils, publications."}},
   {"@type":"Question","name":"Faut-il donner ses identifiants à Slowcial ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tu te connectes directement au réseau concerné, dans une vue web, exactement comme dans un navigateur. Slowcial ne lit pas, ne copie pas et ne transmet pas tes identifiants."}},
-  {"@type":"Question","name":"Mes données sont-elles envoyées quelque part ?","acceptedAnswer":{"@type":"Answer","text":"Non. Slowcial n'a pas de compte et pas de serveur. Tes réglages et ton temps d'écran restent sur ton appareil. Seuls des rapports de plantage anonymes peuvent être envoyés, et ils se coupent dans les réglages."}},
+  {"@type":"Question","name":"Mes données sont-elles envoyées quelque part ?","acceptedAnswer":{"@type":"Answer","text":"Slowcial n'a ni compte ni serveur : tes réglages, ton temps d'écran et les pages que tu ouvres restent sur ton appareil. Seuls sortent un rapport de plantage anonyme, que tu peux couper, la validation de l'abonnement et la mesure d'attribution publicitaire — aucun ne contient ce que tu consultes."}},
   {"@type":"Question","name":"Quels réseaux sont pris en charge ?","acceptedAnswer":{"@type":"Answer","text":"Instagram, YouTube, TikTok, Facebook, Reddit, X et Snapchat. Chaque réseau a ses propres réglages de filtrage, que tu actives ou coupes un par un."}},
-  {"@type":"Question","name":"Combien coûte Slowcial ?","acceptedAnswer":{"@type":"Answer","text":"Un réseau filtré est gratuit. Premium débloque le filtrage illimité sur tous les réseaux, à 39,90 € par an ou 3,99 € par mois."}}]}
+  {"@type":"Question","name":"Combien coûte Slowcial ?","acceptedAnswer":{"@type":"Answer","text":"Un réseau filtré est gratuit, avec le mode nuit et les statistiques. Premium débloque tous les réseaux et tous les filtres, à 34,99 € par an ou 4,99 € par mois."}}]}
 ]}
 </script>
 
@@ -131,6 +132,9 @@ h1 em{font-style:normal;color:var(--glow)}
 .store-txt{display:flex;flex-direction:column;line-height:1.12}
 .store-txt small{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(245,238,223,.66)}
 .store-txt b{font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.02em}
+a.store{text-decoration:none;transition:border-color .25s,transform .25s,background .25s}
+a.store:hover{border-color:var(--glow);background:rgba(12,8,4,.72);transform:translateY(-2px)}
+.store.soon{opacity:.5}
 .hero-note{font-size:14px;color:rgba(245,238,223,.55)}
 .scroll{display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,238,223,.5);margin-top:40px}
 .scroll span{display:block;width:34px;height:1px;background:rgba(245,238,223,.4);animation:slide 2.4s ease-in-out infinite}
@@ -179,9 +183,25 @@ section.pane{padding:88px 0;border-top:1px solid var(--line)}
 .quote{font-family:var(--display);font-weight:500;font-size:clamp(23px,3.9vw,40px);line-height:1.24;max-width:min(20ch,100%);letter-spacing:-.03em}
 .quote em{font-style:normal;color:var(--terra)}
 .aside{color:var(--ink2);max-width:min(50ch,100%)}
+.aside a{color:var(--terra);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--terra) 40%,transparent)}
+.aside a:hover{border-color:var(--terra)}
 .split{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:start}
 
-/* Tarifs — à réconcilier avec le gating réel avant publication. */
+/* ————— Aperçu : rail de captures ————— */
+.shots{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:6px 0 4px}
+.shots::-webkit-scrollbar{display:none}
+.shots-rail{display:flex;gap:22px;width:max-content;
+  padding:0 max(26px,calc((100vw - var(--w))/2 + 26px))}
+.shot{width:min(260px,68vw);scroll-snap-align:center;flex:none}
+.shot img{width:100%;height:auto;border-radius:26px;border:1px solid var(--line);
+  background:var(--card);box-shadow:0 26px 54px -26px rgba(59,42,30,.42)}
+.shot figcaption{margin-top:16px;color:var(--ink2);font-size:15px;line-height:1.5}
+.shot figcaption b{display:block;font-family:var(--display);font-weight:600;font-size:17px;
+  color:var(--ink);letter-spacing:-.02em;margin-bottom:5px}
+@media (max-width:640px){.shots-rail{gap:16px;padding:0 26px}}
+
+/* Tarifs — alignés sur les produits App Store (34,99 €/an, 4,99 €/mois). */
 .price{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .plan{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:30px;position:relative}
 .plan.hot{border-color:var(--terra);background:color-mix(in srgb,var(--terra) 8%,var(--card))}
@@ -190,6 +210,17 @@ section.pane{padding:88px 0;border-top:1px solid var(--line)}
 .plan .amount{font-family:var(--display);font-size:40px;font-weight:800;color:var(--terra);letter-spacing:-.04em}
 .plan .per{font-size:14px;color:var(--ink2);font-weight:400;font-family:var(--body)}
 .plan p{margin-top:10px;color:var(--ink2);font-size:15.5px}
+
+/* ————— Clôture ————— */
+.close{background:var(--terra);color:var(--cream);padding:92px 0;text-align:center}
+.close h2{font-size:clamp(30px,5vw,50px);font-weight:800;letter-spacing:-.035em}
+.close p{margin:20px auto 0;max-width:min(44ch,100%);color:rgba(245,238,223,.84)}
+.close .btn{display:inline-block;margin-top:34px;background:var(--cream);color:var(--terra);
+  font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.02em;
+  padding:17px 32px;border-radius:999px;text-decoration:none;
+  transition:transform .25s,box-shadow .25s;box-shadow:0 14px 30px -16px rgba(12,8,4,.6)}
+.close .btn:hover{transform:translateY(-2px);box-shadow:0 20px 38px -18px rgba(12,8,4,.7)}
+.close .fine{margin:18px auto 0;font-size:13.5px;color:rgba(245,238,223,.6)}
 
 details{border-top:1px solid var(--line);padding:20px 0}
 details:last-of-type{border-bottom:1px solid var(--line)}
@@ -269,24 +300,23 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     <div class="hero-mid">
       <h1><em>Ralentis</em> sur les réseaux.</h1>
       <p>Garde tes messages et tes profils. Slowcial retire ce qui est conçu pour te retenir.</p>
-      <!-- Badges au format officiel (180×54, deux lignes), mais SANS les marques
-           Apple et Google : leurs chartes réservent le badge aux applications
-           réellement publiées. Le jour du lancement, remplacer chaque <span
-           class="store"> par un <a href="…"> portant l'image officielle :
-             Apple  → https://developer.apple.com/app-store/marketing/guidelines/
-             Google → https://play.google.com/intl/en_us/badges/            -->
+      <!-- Gabarit maison, volontairement sans l'artwork officiel d'Apple : la
+           charte impose l'image telle quelle, sans la redessiner, et rien
+           n'oblige à l'utiliser. Le lien, lui, est le vrai.
+             Apple → https://developer.apple.com/app-store/marketing/guidelines/ -->
       <div class="hero-cta">
         <div class="stores">
-          <span class="store" aria-label="Bientôt disponible sur l'App Store">
+          <a class="store" href="https://apps.apple.com/fr/app/id6802452087"
+             aria-label="Télécharger Slowcial sur l'App Store">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <span class="store-txt"><small>Bientôt sur</small><b>l'App Store</b></span>
-          </span>
-          <span class="store" aria-label="Bientôt disponible sur Google Play">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <span class="store-txt"><small>Bientôt sur</small><b>Google Play</b></span>
+            <span class="store-txt"><small>Télécharger sur</small><b>l'App Store</b></span>
+          </a>
+          <span class="store soon" aria-label="Version Android en préparation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>
+            <span class="store-txt"><small>En préparation</small><b>Android</b></span>
           </span>
         </div>
-        <span class="hero-note">Pour iPhone · sans compte · 8 langues</span>
+        <span class="hero-note">Pour iPhone · sans compte · 8 langues · gratuit pour un réseau</span>
       </div>
       <div class="scroll"><span></span> Fais défiler</div>
     </div>
@@ -384,6 +414,48 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     </div>
   </section>
 
+  <!-- ————— Aperçu : les captures réelles de l'application (store/screenshots) —————
+       Défilement horizontal avec accroche : cinq écrans tiennent mal côte à côte
+       sur un portable, et les empiler verticalement casserait la lecture. -->
+  <section class="pane" id="apercu">
+    <div class="wrap">
+      <div class="head rev">
+        <p class="eyebrow">Aperçu</p>
+        <h2>Ce que ça donne, écran par écran.</h2>
+        <p>Des captures réelles, prises dans l'application. Rien de reconstitué.</p>
+      </div>
+    </div>
+    <div class="shots rev" data-d="1">
+      <div class="shots-rail">
+        <figure class="shot">
+          <img src="media/screens/accueil.jpg" width="620" height="1342" loading="lazy" decoding="async"
+               alt="Écran d'accueil de Slowcial : le temps passé aujourd'hui et la liste des réseaux suivis.">
+          <figcaption><b>Ton temps, en haut de l'écran</b>Ce que tu as passé aujourd'hui, et sur quel réseau. C'est la première chose que tu vois en ouvrant.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="media/screens/reseaux.jpg" width="620" height="1342" loading="lazy" decoding="async"
+               alt="Gestion des réseaux : Instagram, YouTube, Reddit et X, avec le nombre de filtres actifs.">
+          <figcaption><b>Un réglage par réseau</b>Chaque service a ses propres filtres, activés un par un. Le compteur dit combien tournent.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="media/screens/stats.jpg" width="620" height="1342" loading="lazy" decoding="async"
+               alt="Statistiques : moyenne avec et sans Slowcial, sept derniers jours en barres.">
+          <figcaption><b>La comparaison, pas la culpabilité</b>Ton estimation de départ face à ta moyenne réelle, et la série de jours passés en dessous.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="media/screens/nuit.jpg" width="620" height="1342" loading="lazy" decoding="async"
+               alt="Mode nuit : un cadran d'horloge pour choisir la plage de coupure, de 23 h à 7 h.">
+          <figcaption><b>Le mode nuit, gratuit</b>Tu fais glisser la lune et le soleil. Passé 23 h, Slowcial refuse de s'ouvrir — ton téléphone, lui, reste libre.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="media/screens/endormir.jpg" width="620" height="1342" loading="lazy" decoding="async"
+               alt="S'endormir : cinq ambiances sonores et un minuteur d'extinction.">
+          <figcaption><b>Et un son pour s'endormir</b>Pluie, océan, forêt, nuit ou jungle, en boucle, qui s'éteint tout seul. Quinze minutes offertes.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="pane">
     <div class="wrap split">
       <div class="rev">
@@ -429,18 +501,20 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     <div class="wrap split">
       <div class="rev">
         <p class="eyebrow">Confidentialité</p>
-        <p class="quote" style="margin-top:12px">Il n'y a rien à revendre, parce qu'il n'y a rien de collecté.</p>
+        <p class="quote" style="margin-top:12px">Ce que tu consultes <em>ne sort pas</em> de ton téléphone.</p>
       </div>
       <div class="rev" data-d="1">
         <p class="aside">
-          Pas de compte à créer, pas de serveur qui stocke ton suivi, aucun profilage,
-          aucun traceur publicitaire. Tes réglages et ton temps d'écran vivent dans
-          l'application, sur ton appareil, et disparaissent si tu la désinstalles.
+          Pas de compte à créer, pas de serveur qui stocke ton suivi, aucun profilage.
+          Tes réglages, ton pseudo et ton temps d'écran vivent dans l'application, sur
+          ton appareil, et disparaissent si tu la désinstalles.
         </p>
         <p class="aside" style="margin-top:16px">
-          Seuls des rapports de plantage anonymes peuvent être envoyés pour corriger
-          les bugs — sans ton pseudo, sans les pages que tu consultes — et ils se
-          coupent d'un geste dans les réglages.
+          Trois choses seulement quittent le téléphone, et aucune ne dit ce que tu
+          regardes : un rapport de plantage anonyme quand l'application casse, la
+          vérification de ton abonnement, et la mesure de la publicité qui t'a fait
+          l'installer — sans identifiant publicitaire et sans demande de suivi.
+          <a href="confidentialite/">Le détail, ligne par ligne</a>.
         </p>
       </div>
     </div>
@@ -457,20 +531,24 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
         <div class="plan rev" data-d="1">
           <h3>Gratuit</h3>
           <div class="amount">0 €</div>
-          <p>Un réseau filtré, tous les réglages, la mesure du temps. Sans limite de durée.</p>
+          <p>Un réseau, son filtre principal, le mode nuit et toutes tes statistiques. Sans limite de durée.</p>
         </div>
         <div class="plan hot rev" data-d="2">
-          <span class="tag">2 mois offerts</span>
+          <span class="tag">−40 %</span>
           <h3>Premium annuel</h3>
-          <div class="amount">3,33 € <span class="per">/ mois</span></div>
-          <p>Filtrage illimité sur tous tes réseaux, statistiques détaillées. 39,90 € facturés par an.</p>
+          <div class="amount">2,92 € <span class="per">/ mois</span></div>
+          <p>Tous les réseaux, tous les filtres, les sons pour s'endormir sans limite. 34,99 € facturés par an.</p>
         </div>
         <div class="plan rev" data-d="3">
           <h3>Premium mensuel</h3>
-          <div class="amount">3,99 € <span class="per">/ mois</span></div>
+          <div class="amount">4,99 € <span class="per">/ mois</span></div>
           <p>La même chose, sans engagement.</p>
         </div>
       </div>
+      <p class="aside" style="margin-top:20px">
+        Prix pour la France, tels qu'affichés sur l'App Store. L'abonnement se renouvelle
+        automatiquement et s'annule à tout moment depuis les réglages de ton compte Apple.
+      </p>
     </div>
   </section>
 
@@ -491,7 +569,7 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
         </details>
         <details>
           <summary>Est-ce que mes données partent quelque part ?</summary>
-          <p>Non. Il n'y a ni compte ni serveur. Tes réglages et ton temps d'écran restent sur ton téléphone. Seuls des rapports de plantage anonymes peuvent être envoyés, et tu peux les couper.</p>
+          <p>Ni tes réglages, ni ton temps d'écran, ni les pages que tu ouvres : tout ça reste sur ton téléphone, il n'y a ni compte ni serveur. Ce qui sort se compte sur les doigts d'une main — un rapport de plantage anonyme, que tu peux couper, la validation de ton abonnement, et la mesure de la publicité qui t'a amené ici. Aucune de ces trois ne sait ce que tu consultes.</p>
         </details>
         <details>
           <summary>Que se passe-t-il si un réseau change son site ?</summary>
@@ -503,9 +581,24 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
         </details>
         <details>
           <summary>Et sur Android ?</summary>
-          <p>La première version est prévue pour iPhone. Android suivra si l'accueil est au rendez-vous.</p>
+          <p>Slowcial est disponible sur iPhone, en français et sept autres langues. La version Android est en préparation ; elle sortira si l'accueil est au rendez-vous.</p>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- ————— Clôture : la page se terminait sur une FAQ, sans rien à faire ————— -->
+  <section class="close">
+    <div class="wrap">
+      <h2 class="rev">Commence par un réseau.<br>Celui qui te prend le plus.</h2>
+      <p class="rev" data-d="1">
+        Gratuit, sans limite de durée et sans compte à créer. Tu verras dès la
+        première semaine combien de temps il te rendait.
+      </p>
+      <a class="btn rev" data-d="2" href="https://apps.apple.com/fr/app/id6802452087">
+        Télécharger sur l'App Store
+      </a>
+      <p class="fine rev" data-d="2">Pour iPhone, iOS 16.4 ou version ultérieure.</p>
     </div>
   </section>
 

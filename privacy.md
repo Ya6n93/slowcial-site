@@ -7,15 +7,17 @@ lang: en
 
 # Privacy Policy — Slowcial
 
-**Last updated: 12 August 2026**
+**Last updated: 9 September 2026**
 
 Slowcial helps you use social networks more calmly by hiding the content designed
 to keep you scrolling. This page explains exactly what data exists, where it lives,
 and what happens to it.
 
-In short: **we collect nothing about you.** Slowcial has no server, no account and
-no analytics. The only thing that can leave your phone is an anonymous crash
-report — and you can switch it off.
+In short: **nothing you do inside Slowcial leaves your phone.** No account, no
+server storing your usage, no profiling. Only three things go out, and none of them
+knows what you look at: an anonymous crash report (which you can switch off), the
+check that your subscription is valid, and the measurement of the ad that made you
+install the app. Details below.
 
 ## What Slowcial stores — on your device only
 
@@ -53,12 +55,29 @@ If you subscribe to Slowcial Premium, the purchase is handled by Apple. We never
 see your payment method, your Apple ID or your address. We only receive the fact
 that this device has an active subscription.
 
-<!-- ENABLE WHEN REVENUECAT IS INTEGRATED:
-Subscription handling relies on RevenueCat, Inc., which receives an anonymous
-install identifier and the associated purchase history in order to verify the
-subscription. That identifier is not linked to any name, email address or browsing
-content. See: https://www.revenuecat.com/privacy
--->
+Subscription validity is checked by **RevenueCat, Inc.**, which receives an anonymous
+install identifier and the associated purchase history — date, product and status.
+That identifier is linked to no name, no email address and no browsing content.
+See: https://www.revenuecat.com/privacy
+
+## Advertising measurement
+
+Slowcial is advertised on Meta and TikTok. To know which ad brought someone in — and
+above all which one brought no one — the app uses **AppsFlyer Ltd.**, an install
+measurement service. The scope is the narrowest that service allows:
+
+- **no advertising identifier (IDFA)**, and therefore no "Allow tracking" prompt: it
+  never appears, because there is nothing to allow. Attribution relies on SKAdNetwork,
+  Apple's own mechanism, which is anonymous and aggregated, and on the IDFV, an
+  identifier that never leaves our own apps and dies when you uninstall;
+- **no device name** — it often contains a first name;
+- **no usage events**. Time spent, the networks you follow, the filters you enable,
+  the pages you open: none of it is transmitted. The only event sent is a subscription
+  purchase and its amount, because a campaign is judged on the revenue it brings.
+
+Meta and TikTok receive the matching measurement from AppsFlyer: that an install, and
+where applicable a purchase, followed one of their ads. See:
+https://www.appsflyer.com/legal/services-privacy-policy/
 
 ## Crash reports
 
@@ -83,8 +102,9 @@ opened it. Turn it off in the app's settings, or in iOS settings.
 ## What Slowcial does not do
 
 - No account, no sign-up, no email address requested.
-- No analytics, no advertising tracker, no profiling.
-- No selling or sharing of data — there is nothing to sell.
+- No analytics inside the app: what you do in it is measured nowhere but on your phone.
+- No advertising identifier, no profiling, no ads shown to you.
+- No selling of data: what exists is limited to what is described above.
 - No access to your messages, contacts, location or photos.
 
 ## Children
@@ -94,10 +114,14 @@ about them.
 
 ## Your rights
 
-Since nothing leaves your phone, you stay in direct control: "Start over" erases
-your Slowcial data, "Reset" erases a network's data, uninstalling erases
-everything. We hold no copy, so there is no access or deletion request to make to
-us.
+Since your usage never leaves your phone, you stay in direct control: "Start over"
+erases your Slowcial data, "Reset" erases a network's data, uninstalling erases
+everything — including the install identifier used for measurement, which cannot be
+recovered afterwards. We hold no copy of your usage.
+
+For what does pass through our providers — RevenueCat for the subscription, AppsFlyer
+for measurement, Sentry for crashes — write to the address below and we will request
+deletion of the records tied to your install.
 
 ## Changes
 

@@ -7,15 +7,17 @@ lang: fr
 
 # Politique de confidentialité — Slowcial
 
-**Dernière mise à jour : 12 août 2026**
+**Dernière mise à jour : 9 septembre 2026**
 
 Slowcial est une application qui t'aide à utiliser tes réseaux sociaux plus calmement,
 en masquant les contenus conçus pour te retenir. Cette page explique exactement
 quelles données existent, où elles sont, et ce qu'on en fait.
 
-Résumé : **on ne collecte rien sur toi.** Slowcial n'a pas de serveur, pas de
-compte, pas d'outil de mesure d'audience. La seule chose qui peut sortir de ton
-téléphone, c'est un rapport de plantage anonyme — et tu peux le couper.
+Résumé : **rien de ce que tu fais dans Slowcial ne quitte ton téléphone.** Pas de
+compte, pas de serveur qui stocke ton usage, aucun profilage. Trois choses
+seulement sortent, et aucune ne sait ce que tu consultes : un rapport de plantage
+anonyme (coupable), la vérification de ton abonnement, et la mesure de la
+publicité qui t'a fait installer l'application. Le détail est plus bas.
 
 ## Ce que Slowcial enregistre — uniquement sur ton téléphone
 
@@ -55,12 +57,31 @@ Si tu souscris à Slowcial Premium, l'achat est traité par Apple. Nous ne voyon
 ton moyen de paiement, ni ton identifiant Apple, ni ton adresse. Nous recevons
 uniquement l'information « cet appareil a un abonnement actif ».
 
-<!-- À ACTIVER À L'INTÉGRATION DE REVENUECAT :
-Le traitement des abonnements s'appuie sur RevenueCat, Inc., qui reçoit un
-identifiant anonyme d'installation et l'historique d'achat associé, afin de
-vérifier la validité de l'abonnement. Cet identifiant n'est relié à aucun nom,
-adresse e-mail ni contenu consulté. Voir : https://www.revenuecat.com/privacy
--->
+La validité de l'abonnement est vérifiée par **RevenueCat, Inc.**, qui reçoit un
+identifiant anonyme d'installation et l'historique d'achat associé — la date, le
+produit et le statut. Cet identifiant n'est relié à aucun nom, aucune adresse
+e-mail, aucun contenu consulté. Voir : https://www.revenuecat.com/privacy
+
+## Mesure de la publicité
+
+Slowcial se fait connaître par de la publicité, sur Meta et TikTok. Pour savoir
+quelle annonce a amené quelqu'un — et surtout laquelle n'a rien amené — l'application
+utilise **AppsFlyer Ltd.**, un service de mesure d'installation. Le périmètre est le
+plus étroit que ce service permette :
+
+- **aucun identifiant publicitaire (IDFA)**, et donc aucune fenêtre « Autoriser le
+  suivi » : elle ne s'affiche pas, parce qu'il n'y a rien à autoriser. L'attribution
+  repose sur SKAdNetwork, le mécanisme d'Apple, anonyme et agrégé, et sur l'IDFV, un
+  identifiant qui ne sort pas de nos applications et meurt à la désinstallation ;
+- **aucun nom d'appareil** — il contient souvent un prénom ;
+- **aucun événement d'usage**. Le temps passé, les réseaux que tu suis, les filtres
+  que tu actives, les pages que tu ouvres : rien de tout cela n'est transmis. Le seul
+  événement envoyé est l'achat d'un abonnement, avec son montant, parce qu'une campagne
+  se juge au revenu qu'elle rapporte.
+
+Meta et TikTok reçoivent d'AppsFlyer la mesure correspondante : qu'une installation
+et, le cas échéant, qu'un achat ont suivi une de leurs annonces. Voir :
+https://www.appsflyer.com/legal/services-privacy-policy/
 
 ## Rapports de plantage
 
@@ -85,8 +106,10 @@ tu l'as reçue ou ouverte. Elle se coupe dans les réglages, ou depuis ceux d'iO
 ## Ce que Slowcial ne fait pas
 
 - Aucun compte, aucune inscription, aucune adresse e-mail demandée.
-- Aucun outil de mesure d'audience, aucun traceur publicitaire, aucun profilage.
-- Aucune revente ou partage de données : il n'y a rien à revendre.
+- Aucun outil de mesure d'audience à l'intérieur de l'application : ce que tu y fais
+  n'est mesuré nulle part ailleurs que sur ton téléphone.
+- Aucun identifiant publicitaire, aucun profilage, aucune publicité affichée.
+- Aucune revente de données : ce qui existe se limite à ce qui est décrit plus haut.
 - Aucun accès à tes messages, tes contacts, ta position ou tes photos.
 
 ## Enfants
@@ -96,10 +119,15 @@ sciemment aucune donnée les concernant.
 
 ## Tes droits
 
-Comme rien ne quitte ton téléphone, tu gardes le contrôle direct : « Recommencer à
-zéro » efface tes données Slowcial, « Réinitialiser » efface les données d'un
-réseau, la désinstallation efface l'ensemble. Nous ne détenons aucune copie, donc
-aucune demande d'accès ou d'effacement n'a lieu d'être auprès de nous.
+Comme ton usage ne quitte pas ton téléphone, tu gardes le contrôle direct :
+« Recommencer à zéro » efface tes données Slowcial, « Réinitialiser » efface les
+données d'un réseau, la désinstallation efface l'ensemble — y compris l'identifiant
+d'installation utilisé pour la mesure, qui n'est pas récupérable ensuite. Nous ne
+détenons aucune copie de ton usage.
+
+Pour ce qui transite par nos prestataires — RevenueCat pour l'abonnement, AppsFlyer
+pour la mesure, Sentry pour les plantages — écris-nous à l'adresse ci-dessous : nous
+demandons la suppression des enregistrements liés à ton installation.
 
 ## Modifications
 
