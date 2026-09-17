@@ -109,6 +109,47 @@ h1,h2,h3,.num{font-family:var(--display);letter-spacing:-.025em;line-height:1.06
 .brand i:last-child{color:var(--glow)}
 @keyframes pop{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
 
+/* ————— Navigation ————————————————————————————————————————————————————
+   Depuis l'accueil, rien ne menait aux guides : ils n'existaient que dans le
+   pied de page. Deux accès plutôt qu'un — l'un dans le hero, l'autre qui
+   revient au défilement — parce qu'un visiteur qui a fait dix écrans ne
+   remonte pas chercher un menu.
+
+   La barre du hero est posée en ABSOLU, pas dans le flux : le mot-symbole est
+   déplacé par l'animation d'ouverture, qui calcule sa translation depuis sa
+   position réelle. Le mettre dans une rangée avec autre chose décalerait ce
+   calcul, et l'intro partirait de travers. */
+.hnav{position:absolute;top:32px;right:26px;z-index:3;
+  display:flex;align-items:center;gap:22px;font-size:15px}
+.hnav a{color:rgba(245,238,223,.74);text-decoration:none;transition:color .22s}
+.hnav a:hover{color:var(--cream)}
+.hnav .lang{border:1.5px solid rgba(245,238,223,.36);border-radius:999px;padding:5px 12px;
+  font-size:12.5px;font-weight:600;letter-spacing:.06em;transition:border-color .22s,color .22s}
+.hnav .lang:hover{border-color:var(--glow);color:var(--cream)}
+.pre .hnav{opacity:0}
+@media(max-width:760px){.hnav{gap:15px;top:27px;font-size:14px}.hnav .wide{display:none}}
+
+/* La barre collante n'existe qu'après le hero : superposée à la vidéo, elle
+   salirait l'ouverture, qui est la seule image que beaucoup verront. */
+.sticky{position:fixed;top:0;left:0;right:0;z-index:40;
+  background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);transform:translateY(-101%);
+  transition:transform .32s cubic-bezier(.2,.7,.3,1)}
+.sticky.on{transform:none}
+.sticky .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.sbrand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.035em;
+  color:var(--ink);text-decoration:none}
+.sbrand span{color:var(--terra)}
+.sticky nav{margin-left:auto;display:flex;align-items:center;gap:19px;font-size:15px}
+.sticky nav a{color:var(--ink2);text-decoration:none;transition:color .2s}
+.sticky nav a:hover{color:var(--ink)}
+.sticky .mini{background:var(--terra);color:var(--cream);padding:9px 15px;border-radius:10px;
+  font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-.01em;
+  transition:background .22s}
+.sticky .mini:hover{background:var(--glow);color:var(--cream)}
+@media(max-width:760px){.sticky nav{gap:14px;font-size:14px}.sticky .wide{display:none}}
+@media(prefers-reduced-motion:reduce){.sticky{transition:none}}
+
 /* ————— Intro : reprise de la séquence d'ouverture de l'application —————
    `.pre` est posé par un script en tête de document, donc AVANT le premier
    rendu : rien ne clignote. Les éléments gardent leur place dans le flux (on ne
@@ -286,6 +327,19 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
 </head>
 <body>
 
+<div class="sticky" id="sticky">
+  <div class="wrap">
+    <a class="sbrand" href="#haut">slowcial<span>.</span></a>
+    <nav aria-label="Sections du site">
+      <a href="guides/">Guides</a>
+      <a class="wide" href="filtres/">Les filtres</a>
+      <a class="wide" href="calculateur/">Calculateur</a>
+      <a href="en/" hreflang="en">EN</a>
+      <a class="mini" href="https://apps.apple.com/fr/app/id6802452087">Télécharger</a>
+    </nav>
+  </div>
+</div>
+
 <header class="hero" id="haut">
   <!-- L'image et la vidéo sont dans un même calque : pendant l'intro, l'écran
        part du noir absolu et ce calque apparaît en fondu — exactement comme à
@@ -299,6 +353,13 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
     <div class="brand" aria-label="slowcial">
       <i>s</i><i>l</i><i>o</i><i>w</i><i>c</i><i>i</i><i>a</i><i>l</i><i>.</i>
     </div>
+
+    <nav class="hnav" aria-label="Sections du site">
+      <a href="guides/">Guides</a>
+      <a class="wide" href="filtres/">Les filtres</a>
+      <a class="wide" href="calculateur/">Calculateur</a>
+      <a class="lang" href="en/" hreflang="en">EN</a>
+    </nav>
 
     <div class="hero-mid">
       <h1><em>Ralentis</em> sur les réseaux.</h1>
@@ -805,6 +866,28 @@ footer .fline{font-family:var(--display);font-weight:500;font-size:clamp(22px,3.
       });
     }, {threshold:.6});
     co.observe(n);
+  }
+
+  /* ——————————————————————————————————————————————————————————————
+     La barre collante apparaît quand le hero a fini de passer.
+
+     Le seuil se mesure sur la hauteur RÉELLE du hero plutôt que sur une
+     valeur en dur : il fait 100svh, donc il change avec la barre d'adresse
+     du navigateur mobile, qui se replie au défilement. Une constante ferait
+     surgir la barre au milieu de la vidéo sur certains téléphones.
+     —————————————————————————————————————————————————————————————— */
+  var bar = document.getElementById('sticky');
+  var heroEl = document.getElementById('haut');
+  if (bar && heroEl) {
+    var visible = false;
+    var maj = function(){
+      var seuil = heroEl.offsetHeight - 70;
+      var doit = window.scrollY > seuil;
+      if (doit !== visible) { visible = doit; bar.classList.toggle('on', doit); }
+    };
+    addEventListener('scroll', maj, {passive:true});
+    addEventListener('resize', maj);
+    maj();
   }
 })();
 </script>
