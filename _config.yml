@@ -5,3 +5,10 @@
 title: Slowcial
 description: Tes réseaux, en plus calme.
 lang: fr
+
+# Le générateur et le rush 4K ne sont pas des pages : ils ne doivent pas être
+# publiés. rules.json, lui, RESTE servi — c'est le fichier que les appareils
+# téléchargent.
+exclude:
+  - tools
+  - 8088617-uhd_4096_2160_25fps.mp4

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Slowcial removes, network by network (rules v6)</title>
+<meta name="description" content="The exact list of filters Slowcial applies to each network, generated from the rule set actually served to devices.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#F4EDDE">
+<link rel="canonical" href="https://slowcial-app.com/en/filters/">
+<link rel="alternate" hreflang="fr" href="https://slowcial-app.com/filtres/">
+<link rel="alternate" hreflang="en" href="https://slowcial-app.com/en/filters/">
+<link rel="alternate" hreflang="x-default" href="https://slowcial-app.com/en/filters/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Slowcial">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="What Slowcial removes, network by network (rules v6)">
+<meta property="og:description" content="The exact list of filters Slowcial applies to each network, generated from the rule set actually served to devices.">
+<meta property="og:url" content="https://slowcial-app.com/en/filters/">
+<meta property="og:image" content="https://slowcial-app.com/media/articles/p5.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Slowcial removes, network by network (rules v6)">
+<meta name="twitter:description" content="The exact list of filters Slowcial applies to each network, generated from the rule set actually served to devices.">
+<meta name="twitter:image" content="https://slowcial-app.com/media/articles/p5.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="/media/icon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/media/icon-512.png">
+<link rel="apple-touch-icon" href="/media/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/sl.css">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","@id":"https://slowcial-app.com/en/filters/#page","url":"https://slowcial-app.com/en/filters/","name":"What Slowcial removes, network by network (rules v6)","description":"The exact list of filters Slowcial applies to each network, generated from the rule set actually served to devices.","inLanguage":"en-GB","isPartOf":{"@type":"WebSite","@id":"https://slowcial-app.com/#site"}}]</script>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/en/"><i>slowcial</i><i>.</i></a>
+  <nav>
+    <a class="hide-s" href="/en/guides/">Guides</a>
+    <a class="hide-s" href="/en/filters/" aria-current="page">Filters</a>
+    <a class="hide-s" href="/en/calculator/">Calculator</a>
+    <a class="lang" href="/filtres/" hreflang="fr">FR</a>
+  </nav>
+</div></header>
+<section class="ahero">
+  <picture>
+    <source type="image/webp" media="(max-width:700px)" srcset="/media/articles/p5-800.webp">
+    <source type="image/webp" srcset="/media/articles/p5.webp">
+    <img src="/media/articles/p5.jpg" alt="" width="1600" height="686" fetchpriority="high">
+  </picture>
+  <div class="wrap">
+    <p class="eyebrow">Filters</p>
+    <h1>What Slowcial <em>removes</em></h1>
+    <p class="lede">This page is generated from rules.json, the file devices download. It therefore cannot promise a filter that no longer exists.</p>
+    <p class="meta"><span>Rules v6</span><span>Updated 2026-09-17</span></p>
+  </div>
+</section><section class="wrap prose">
+  <div class="tablewrap rev" style="max-width:100%"><table>
+    <thead><tr><th>Network</th><th>Filter</th><th>Without subscription</th><th>On by default</th><th>Mechanism</th></tr></thead>
+    <tbody><tr><td rowspan="3"><strong>YouTube</strong></td><td><strong>Hide Shorts</strong><br><span style="color:var(--ink2);font-size:14.5px">Short vertical videos</span></td><td>Free</td><td>Yes</td><td><code>18 selectors</code></td></tr><tr><td><strong>Hide suggestions</strong><br><span style="color:var(--ink2);font-size:14.5px">The “for you” recommendation feed</span></td><td>—</td><td>No</td><td><code>feed switch</code></td></tr><tr><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>16 selectors, player pruning</code></td></tr><tr><td rowspan="4"><strong>Instagram</strong></td><td><strong>Hide reels</strong><br><span style="color:var(--ink2);font-size:14.5px">Short videos and shorts</span></td><td>Free</td><td>Yes</td><td><code>2 selectors</code></td></tr><tr><td><strong>Hide suggestions</strong><br><span style="color:var(--ink2);font-size:14.5px">The “for you” recommendation feed</span></td><td>—</td><td>No</td><td><code>1 selector, feed switch</code></td></tr><tr><td><strong>Hide explore</strong><br><span style="color:var(--ink2);font-size:14.5px">Discovery page</span></td><td>—</td><td>No</td><td><code>2 selectors</code></td></tr><tr><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>15 labels</code></td></tr><tr><td rowspan="3"><strong>X</strong></td><td><strong>Hide suggestions</strong><br><span style="color:var(--ink2);font-size:14.5px">The “for you” recommendation feed</span></td><td>Free</td><td>No</td><td><code>21 labels, feed switch</code></td></tr><tr><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>2 selectors</code></td></tr><tr><td><strong>Hide explore</strong><br><span style="color:var(--ink2);font-size:14.5px">Discovery page</span></td><td>—</td><td>No</td><td><code>3 selectors</code></td></tr><tr><td rowspan="2"><strong>Facebook</strong></td><td><strong>Hide reels</strong><br><span style="color:var(--ink2);font-size:14.5px">Short videos and shorts</span></td><td>Free</td><td>Yes</td><td><code>2 selectors, 1 label</code></td></tr><tr><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>15 labels</code></td></tr><tr><td rowspan="2"><strong>Reddit</strong></td><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>5 selectors, 23 labels</code></td></tr><tr><td><strong>Hide suggestions</strong><br><span style="color:var(--ink2);font-size:14.5px">The “for you” recommendation feed</span></td><td>Free</td><td>No</td><td><code>3 selectors, 4 labels</code></td></tr><tr><td rowspan="2"><strong>TikTok</strong> <span style="color:var(--ink2);font-size:14px">— coming soon</span></td><td><strong>Hide suggestions</strong><br><span style="color:var(--ink2);font-size:14.5px">The “for you” recommendation feed</span></td><td>Free</td><td>No</td><td><code>feed switch</code></td></tr><tr><td><strong>Hide ads</strong><br><span style="color:var(--ink2);font-size:14.5px">Adverts and sponsored content</span></td><td>—</td><td>No</td><td><code>23 labels</code></td></tr><tr><td rowspan="2"><strong>Snapchat</strong> <span style="color:var(--ink2);font-size:14px">— coming soon</span></td><td><strong>Hide reels</strong><br><span style="color:var(--ink2);font-size:14.5px">Short videos and shorts</span></td><td>Free</td><td>Yes</td><td><code>5 selectors</code></td></tr><tr><td><strong>Hide explore</strong><br><span style="color:var(--ink2);font-size:14.5px">Discovery page</span></td><td>—</td><td>No</td><td><code>4 selectors</code></td></tr></tbody></table></div>
+  <aside class="note rev"><span class="k">How it works</span>
+  <p>The rules describe the HTML of sites we don't control. When a network redesigns, a filter stops biting — we then fix the rule set and republish it here. Devices pick it up on their next launch, with no app update.</p></aside>
+</section>
+<section class="wrap"><div class="cta rev">
+  <h2>Take your time back.</h2>
+  <p>One filtered network, free. No account to create, no ads, and nothing that leaves your phone.</p>
+  <div class="btns">
+    <a class="btn" href="https://apps.apple.com/fr/app/id6802452087" rel="nofollow">Download on the App Store</a>
+    <a class="btn ghost" href="/en/filters/">See what Slowcial removes</a>
+  </div>
+  <small>iPhone · eight languages · no account</small>
+</div></section><footer><div class="wrap">
+  <div class="cols">
+    <div><h4>Guides</h4><a href="/en/guides/remove-instagram-reels/">Remove Reels from Instagram</a><a href="/en/guides/turn-off-youtube-shorts/">Turn off YouTube Shorts</a><a href="/en/guides/remove-instagram-explore/">Remove Explore from Instagram</a><a href="/en/guides/remove-facebook-reels/">Remove Reels from Facebook</a><a href="/en/guides/x-following-feed/">X without the For You feed</a></div>
+    <div><h4>Slowcial</h4>
+      <a href="/en/">Home</a>
+      <a href="/en/filters/">Filters</a>
+      <a href="/en/calculator/">Calculator</a>
+      <a href="https://apps.apple.com/fr/app/id6802452087" rel="nofollow">App Store</a></div>
+    <div><h4>Legal</h4>
+      <a href="/privacy/">Privacy</a>
+      <a href="/conditions/">Terms</a>
+      <a href="mailto:contact@slowcial-app.com">contact@slowcial-app.com</a></div>
+  </div>
+  <p class="fine">Slowcial is not affiliated with any of the services it opens. Names are used descriptively.</p>
+</div></footer>
+<script>
+(function(){
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.rev').forEach(function(el){ calm ? el.classList.add('in') : io.observe(el); });
+  var pr = document.getElementById('prog');
+  if(pr && !calm) addEventListener('scroll', function(){
+    var h = document.documentElement;
+    pr.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
