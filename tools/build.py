@@ -18,6 +18,7 @@ jeu, elle disparaît de la page à la génération suivante.
 
 import json
 import os
+import subprocess
 import sys
 from datetime import date
 
@@ -28,6 +29,25 @@ SITE = 'https://slowcial-app.com'
 APP = 'https://apps.apple.com/fr/app/id6802452087'
 AUJ = date.today().isoformat()
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def date_des_regles() -> str:
+    """Date du dernier changement de `rules.json`, lue dans l'historique git.
+
+    La page des filtres affichait la date de GÉNÉRATION, qui change à chaque
+    passage du script même quand rien n'a bougé — une fraîcheur de façade, que
+    les moteurs finissent par ignorer. Celle-ci dit quelque chose de vrai : le
+    jour où les règles servies aux appareils ont réellement changé.
+    """
+    try:
+        out = subprocess.run(
+            ['git', 'log', '-1', '--format=%ad', '--date=short', '--', 'rules.json'],
+            cwd=RACINE, capture_output=True, text=True, timeout=10, check=True)
+        return out.stdout.strip() or AUJ
+    except Exception:
+        # Dépôt absent, git indisponible : la date du jour reste correcte, elle
+        # est simplement moins précise. Une page qui ne se génère pas serait pire.
+        return AUJ
 
 # Réseaux annoncés mais pas encore ouvrables dans l'application (v1.0.4).
 # Le site ne doit jamais promettre ce que l'application ne laisse pas faire.
@@ -460,10 +480,11 @@ def page_filters(lang):
     th = (['Réseau', 'Filtre', 'Sans abonnement', 'Actif par défaut', 'Mécanique']
           if lang == 'fr' else ['Network', 'Filter', 'Without subscription', 'On by default', 'Mechanism'])
     html = head(lang, path, alt, titre, desc, 'p5')
+    maj = date_des_regles()
     html += banniere('p5', o['nav_filters'],
                      "Ce que Slowcial <em>retire</em>" if lang == 'fr' else "What Slowcial <em>removes</em>",
                      intro, f"<span>{'Règles' if lang == 'fr' else 'Rules'} v{jeu['version']}</span>"
-                            f"<span>{o['updated']} {AUJ}</span>")
+                            f"<span>{'Règles mises à jour le' if lang == 'fr' else 'Rules updated'} {maj}</span>")
     html += f"""<section class="wrap prose">
   <div class="tablewrap rev" style="max-width:100%"><table>
     <thead><tr>{''.join(f'<th>{h}</th>' for h in th)}</tr></thead>

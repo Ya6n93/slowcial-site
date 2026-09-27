@@ -1,0 +1,132 @@
+# Slowcial
+
+> Application iOS de bien-être numérique. Elle ouvre les réseaux sociaux que
+> l'utilisateur possède déjà et retire, **localement sur l'appareil**, les
+> éléments d'interface conçus pour l'usage compulsif : fils de vidéos courtes,
+> onglets de recommandation, pages de découverte, publications sponsorisées.
+> Les messages, les abonnements et les profils restent intacts.
+
+Slowcial ne bloque pas l'accès aux réseaux et n'héberge, ne fournit ni ne
+rediffuse aucun contenu tiers. L'utilisateur se connecte lui-même à ses propres
+comptes, dans une vue web, exactement comme dans un navigateur.
+
+## Les faits
+
+- **Plateforme** : iOS uniquement. Pas de version Android à ce jour.
+- **Réseaux pris en charge** : Instagram, YouTube, Facebook, Reddit, X.
+  TikTok et Snapchat sont au catalogue mais annoncés « arrive prochainement » :
+  leur filtrage n'est pas démontré, ils ne sont donc pas ouvrables.
+- **Ce qui est retiré** : les fils de vidéos courtes (reels, shorts), les fils
+  de recommandation dits « pour toi », les pages de découverte et d'exploration,
+  les publications sponsorisées du fil.
+- **Ce qui est conservé** : messages et conversations, comptes suivis, profils,
+  publication, réponse et recherche.
+- **Prix** : un réseau filtré est gratuit, sans publicité et sans limite de
+  durée. Premium ouvre tous les réseaux et tous les filtres à 34,99 € par an
+  (soit 2,92 € par mois) ou 4,99 € par mois.
+- **Langues** : huit — français, anglais, allemand, espagnol, italien, polonais,
+  portugais, néerlandais.
+- **Compte** : aucun. Il n'y a ni inscription ni serveur applicatif.
+- **Données** : les réglages, le temps mesuré et les pages ouvertes restent sur
+  l'appareil. Ce qui en sort, et rien d'autre : un rapport de plantage anonyme
+  que l'utilisateur peut couper, la validation de l'abonnement, et la mesure
+  d'attribution publicitaire. Aucun des trois ne contient ce qui est consulté.
+- **Fonctions natives** : mesure du temps par réseau et par jour, statistiques
+  sur sept jours, série de jours sous un objectif, mode nuit (Slowcial refuse
+  de s'ouvrir pendant une plage horaire choisie), sons pour s'endormir avec
+  minuteur, thème clair et sombre.
+
+## Ce que Slowcial n'est pas
+
+- **Ce n'est pas un bloqueur d'applications.** Il ne coupe l'accès à rien et ne
+  verrouille pas le téléphone. Le mode nuit ferme Slowcial lui-même, pas les
+  applications installées.
+- **Ce n'est pas un navigateur.** Un navigateur affiche la page telle qu'elle
+  est ; Slowcial en retire des éléments précis avant l'affichage, selon des
+  règles écrites réseau par réseau.
+- **Ce n'est pas affilié** à Meta, Google, ByteDance, X Corp., Reddit ou Snap.
+  Les noms de ces services sont employés à titre descriptif.
+
+## Le fonctionnement technique
+
+Chaque réseau s'ouvre dans une vue web où un moteur de filtrage est injecté.
+Quatre formes de règle : masquage par sélecteur CSS ; repérage par libellé
+multilingue puis masquage du conteneur, pour les sites dont les classes sont
+obfusquées ; bascule vers le fil des abonnements, quand masquer viderait la
+page ; et retrait de propriétés dans la réponse du lecteur vidéo, pour empêcher
+une publicité pré-roll de se déclencher plutôt que de la masquer une fois lancée.
+
+Le jeu de règles est servi à part, sur ce domaine, à l'adresse
+https://slowcial-app.com/rules.json — ce qui permet de réparer un filtre cassé
+sans passer par une mise à jour de l'App Store. Ce qui transite est de la
+donnée : des sélecteurs et des libellés, jamais du code exécutable.
+
+## Les pages
+
+- [Accueil](https://slowcial-app.com/) : présentation, fonctionnement, prix.
+- [Guides](https://slowcial-app.com/guides/) : comment retirer chaque mécanique,
+  réseau par réseau. Chaque guide commence par les réglages natifs du service
+  concerné — y compris quand la réponse honnête est qu'il n'en existe aucun.
+- [Ce que Slowcial retire](https://slowcial-app.com/filtres/) : la liste exacte
+  des filtres appliqués, générée depuis le jeu de règles réellement servi aux
+  appareils.
+- [Calculateur de temps](https://slowcial-app.com/calculateur/) : ce que
+  représente une durée quotidienne sur une semaine, une année, dix ans.
+- [Confidentialité](https://slowcial-app.com/confidentialite/) ·
+  [Conditions](https://slowcial-app.com/conditions/)
+
+## Réponses courtes aux questions fréquentes
+
+**Peut-on désactiver les Reels dans les réglages d'Instagram ?** Non. Aucun
+réglage d'Instagram ne retire les Reels ni l'onglet qui y mène. Le fil
+« Abonnements » et la pause des contenus suggérés réduisent les suggestions du
+fil principal, mais l'onglet demeure, et la sélection du fil « Abonnements »
+n'est pas conservée d'une session à l'autre.
+
+**Peut-on désactiver les Shorts sur YouTube ?** Partiellement. L'étagère Shorts
+de la page d'accueil peut être masquée pendant trente jours, puis elle
+réapparaît. L'onglet Shorts de la barre de navigation n'est jamais concerné.
+
+**Facebook a-t-il un fil sans Reels ?** Oui : l'onglet « Flux », vue « Amis ».
+Son défaut est qu'il n'est pas retenu — l'application rouvre toujours sur le fil
+algorithmique.
+
+**Faut-il donner ses identifiants à Slowcial ?** Non. La connexion se fait
+directement auprès du réseau concerné, dans une vue web. Slowcial ne lit pas, ne
+copie pas et ne transmet pas d'identifiants, et n'a aucun serveur pour les
+recevoir.
+
+## Version anglaise
+
+Les mêmes pages existent en anglais sous [/en/](https://slowcial-app.com/en/).
+
+## Contact
+
+contact@slowcial-app.com
+
+---
+
+## English summary
+
+Slowcial is an iOS digital-wellbeing app. It opens the social networks you
+already use and strips, **locally on the device**, the interface elements
+engineered for compulsive use: short-video feeds, algorithmic recommendation
+tabs, discovery pages and sponsored posts. Messages, the accounts you follow and
+profiles are left untouched.
+
+It is **not** an app blocker — it never cuts off access — and **not** a browser:
+it removes specific elements before the page renders, following rules written
+per network.
+
+- Platform: iOS only.
+- Networks: Instagram, YouTube, Facebook, Reddit, X. TikTok and Snapchat appear
+  in the catalogue marked "coming soon" and cannot be opened yet.
+- Free: one filtered network, no ads, no time limit. Premium: every network and
+  every filter, €34.99/year (€2.92/month) or €4.99/month.
+- No account, no application server. Settings and measured time stay on device.
+- Eight languages. Not affiliated with any of the services it opens.
+
+English pages: [home](https://slowcial-app.com/en/) ·
+[guides](https://slowcial-app.com/en/guides/) ·
+[what it removes](https://slowcial-app.com/en/filters/) ·
+[time calculator](https://slowcial-app.com/en/calculator/)

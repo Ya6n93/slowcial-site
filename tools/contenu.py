@@ -592,4 +592,148 @@ ARTICLES = [
             ],
         },
     },
+    # ————————————————————————————————————————————————— 7. Comparatif des méthodes
+    {
+        'id': 'methodes', 'img': 'p5', 'net': None,
+        'fr': {
+            'slug': 'comment-moins-scroller-methodes-comparees',
+            'title': "Moins scroller : les 6 méthodes comparées (2026)",
+            'h1': "Les <em>six</em> façons de moins scroller",
+            'eyebrow': 'Comparatif',
+            'lede': "Bloqueurs, minuteurs, suppression, écran en gris, comptes secondaires, filtrage. Ce que chacune fait vraiment, et pourquoi la plupart ne tiennent pas.",
+            'desc': "Comparatif honnête des méthodes pour réduire le scroll : bloqueurs d'applications, Temps d'écran, suppression, écran en niveaux de gris, second compte, filtrage. Ce qui tient dans la durée et ce qui ne tient pas.",
+            'body': [
+                ('big', "Toutes ces méthodes marchent. La question n'est pas leur efficacité sur le moment — c'est <strong>combien de temps on les garde</strong>. Une méthode abandonnée au bout de quatre jours a une efficacité réelle de zéro."),
+                ('p', "Voilà les six, avec ce que chacune coûte et ce qui la fait lâcher."),
+
+                ('h2', "1. Supprimer l'application"),
+                ('p', "<strong>Ce que ça fait :</strong> tout disparaît, d'un coup. C'est la méthode la plus efficace pendant qu'elle dure."),
+                ('p', "<strong>Pourquoi ça lâche :</strong> les messages partent avec le reste. Les groupes, les photos de famille, parfois une part du travail. Le coût social est immédiat et le bénéfice diffus — c'est exactement le rapport qui fait réinstaller en trois jours."),
+                ('p', "<strong>Pour qui ça marche :</strong> ceux dont la vie sociale ne passe pas par ce réseau. C'est une minorité, et elle le sait déjà."),
+
+                ('h2', "2. Les bloqueurs d'applications"),
+                ('p', "<strong>Ce que ça fait :</strong> l'accès est coupé à heure fixe, ou après un quota."),
+                ('p', "<strong>Pourquoi ça lâche :</strong> le problème n'a jamais été d'ouvrir l'application — c'est ce qui se passe une fois dedans. Un bloqueur traite l'accès, pas le contenu. Et il bloque aussi les cinq minutes légitimes où tu voulais répondre à quelqu'un, ce qui pousse à le désactiver « juste cette fois »."),
+                ('p', "<strong>Le piège :</strong> plus le blocage est strict, plus vite on apprend à le contourner. La plupart des gens connaissent le code de leur propre restriction par cœur."),
+
+                ('h2', "3. Temps d'écran et limites natives"),
+                ('p', "<strong>Ce que ça fait :</strong> iOS et Android mesurent et avertissent, puis limitent."),
+                ('p', "<strong>Pourquoi ça lâche :</strong> « Ignorer la limite » est un bouton. Il est à un centimètre du pouce, au moment exact où la volonté est la plus basse. La mesure, elle, reste utile — c'est sa meilleure partie."),
+
+                ('h2', "4. L'écran en niveaux de gris"),
+                ('p', "<strong>Ce que ça fait :</strong> retirer la couleur rend les vignettes moins attirantes. L'effet est réel et documenté."),
+                ('p', "<strong>Pourquoi ça lâche :</strong> ça dégrade tout le téléphone, y compris les photos, la carte, l'appareil photo. On le remet en couleur pour une raison précise, et on oublie de le recouper."),
+
+                ('h2', "5. Le second compte, ou le téléphone secondaire"),
+                ('p', "<strong>Ce que ça fait :</strong> un compte neuf n'a pas d'historique, donc un fil de recommandation pauvre."),
+                ('p', "<strong>Pourquoi ça lâche :</strong> l'algorithme apprend vite. Quelques jours suffisent à reconstituer un fil aussi captif que l'ancien — et tu as désormais deux comptes à surveiller au lieu d'un."),
+
+                ('h2', "6. Retirer les mécaniques, garder le réseau"),
+                ('p', "<strong>Ce que ça fait :</strong> le réseau s'ouvre normalement, mais les fils de vidéos courtes, les recommandations et les pages de découverte n'y sont plus. Les messages, les abonnements et les profils ne bougent pas."),
+                ('p', "<strong>Pourquoi ça tient :</strong> il n'y a rien à tenir. Aucun quota à respecter, aucune heure à attendre, aucun bouton « ignorer » à ne pas toucher. Le réglage se pose une fois et ne demande plus rien — et il ne coupe jamais ce pour quoi tu avais installé l'application."),
+                ('p', "<strong>Sa limite, dite franchement :</strong> les règles décrivent le balisage de sites que personne ne contrôle. Quand un réseau refait son interface, un filtre cesse de mordre jusqu'à ce que la règle soit corrigée. C'est le prix de cette approche, et c'est pour ça que le jeu de règles de Slowcial est servi à part de l'application, réparable en quelques minutes plutôt qu'en quelques jours."),
+
+                ('h2', "Le tableau"),
+                ('compare', ("Ce qui coupe l'accès", [
+                    "Suppression : tu perds les messages",
+                    "Bloqueurs : tu perds aussi les usages légitimes",
+                    "Limites natives : un bouton « ignorer » suffit",
+                    "Demande un effort chaque jour",
+                ], "Ce qui retire les mécaniques", [
+                    "Les messages et les abonnements restent",
+                    "Seul le fil conçu pour retenir disparaît",
+                    "Rien à ignorer, rien à contourner",
+                    "Se règle une fois",
+                ])),
+
+                ('h2', "Que choisir"),
+                ('ul', [
+                    "<strong>Si le réseau ne te sert à rien socialement</strong> — supprime-le. C'est plus simple et c'est gratuit.",
+                    "<strong>Si le problème est le soir</strong> — une plage horaire suffit, et beaucoup d'outils en proposent, Slowcial compris.",
+                    "<strong>Si tu y perds du temps mais que tu ne peux pas partir</strong> — retirer les mécaniques est la seule méthode de cette liste qui ne te demande pas de choisir entre ton temps et tes gens.",
+                ]),
+                ('pull', "La meilleure méthode n'est pas la plus stricte. C'est celle que tu auras encore dans six mois."),
+            ],
+            'faq': [
+                ("Quelle est la méthode la plus efficace pour moins scroller ?",
+                 "Sur le moment, supprimer l'application. Dans la durée, retirer les mécaniques d'engagement en gardant le réseau — parce que c'est la seule qui ne coûte pas l'accès aux messages, et qu'on n'abandonne donc pas au bout de quelques jours."),
+                ("Les bloqueurs d'applications fonctionnent-ils ?",
+                 "Ils coupent l'accès, ce qui règle un problème différent : le problème n'est pas d'ouvrir l'application, c'est le fil sans fin qu'on y trouve. Et parce qu'ils bloquent aussi les usages légitimes, ils finissent désactivés."),
+                ("Le mode niveaux de gris réduit-il vraiment le temps d'écran ?",
+                 "L'effet existe : un fil sans couleur attire moins. Sa faiblesse est qu'il s'applique à tout le téléphone, y compris aux photos et à l'appareil photo, si bien qu'on le désactive pour une raison ponctuelle et qu'on oublie de le remettre."),
+                ("Peut-on garder ses messages tout en supprimant les reels ?",
+                 "Oui. C'est précisément ce que fait le filtrage : le réseau s'ouvre avec ton compte, tes conversations et tes abonnements intacts, mais sans les fils de vidéos courtes, les suggestions ni les pages de découverte."),
+            ],
+        },
+        'en': {
+            'slug': 'how-to-scroll-less-methods-compared',
+            'title': "Scrolling Less: 6 Methods Compared (2026)",
+            'h1': "The <em>six</em> ways to scroll less",
+            'eyebrow': 'Comparison',
+            'lede': "Blockers, timers, deleting, greyscale, second accounts, filtering. What each one actually does, and why most of them don't last.",
+            'desc': "An honest comparison of ways to cut scrolling: app blockers, Screen Time, deleting the app, greyscale, a second account, filtering. What holds over time and what doesn't.",
+            'body': [
+                ('big', "All of these work. The question isn't whether they work in the moment — it's <strong>how long you keep them</strong>. A method abandoned after four days has a real-world effectiveness of zero."),
+                ('p', "Here are the six, with what each one costs and what makes people quit."),
+
+                ('h2', "1. Deleting the app"),
+                ('p', "<strong>What it does:</strong> everything goes at once. It's the most effective method for as long as it lasts."),
+                ('p', "<strong>Why it fails:</strong> your messages go with it. The groups, the family photos, sometimes part of your work. The social cost is immediate and the benefit diffuse — exactly the ratio that gets it reinstalled within three days."),
+                ('p', "<strong>Who it works for:</strong> people whose social life doesn't run through that network. That's a minority, and they already know it."),
+
+                ('h2', "2. App blockers"),
+                ('p', "<strong>What it does:</strong> access is cut at a set hour, or after a quota."),
+                ('p', "<strong>Why it fails:</strong> opening the app was never the problem — what happens once you're inside is. A blocker treats access, not content. It also blocks the legitimate five minutes where you wanted to reply to someone, which is what pushes people to disable it “just this once”."),
+                ('p', "<strong>The trap:</strong> the stricter the block, the faster you learn to route around it. Most people know their own restriction passcode by heart."),
+
+                ('h2', "3. Screen Time and built-in limits"),
+                ('p', "<strong>What it does:</strong> iOS and Android measure, warn, then limit."),
+                ('p', "<strong>Why it fails:</strong> “Ignore limit” is a button. It sits an inch from your thumb, at exactly the moment willpower is lowest. The measuring, though, stays genuinely useful — it's the best part."),
+
+                ('h2', "4. Greyscale"),
+                ('p', "<strong>What it does:</strong> removing colour makes thumbnails less pulling. The effect is real and documented."),
+                ('p', "<strong>Why it fails:</strong> it degrades the whole phone, photos, maps and camera included. You turn colour back on for one specific reason, and forget to turn it off again."),
+
+                ('h2', "5. A second account, or a second phone"),
+                ('p', "<strong>What it does:</strong> a fresh account has no history, so a thin recommendation feed."),
+                ('p', "<strong>Why it fails:</strong> the algorithm learns fast. A few days is enough to rebuild a feed as gripping as the old one — and now you have two accounts to watch instead of one."),
+
+                ('h2', "6. Removing the mechanics, keeping the network"),
+                ('p', "<strong>What it does:</strong> the network opens normally, but the short-video feeds, the recommendations and the discovery pages aren't there. Messages, the accounts you follow and profiles don't move."),
+                ('p', "<strong>Why it holds:</strong> there's nothing to hold. No quota to respect, no hour to wait for, no “ignore” button to avoid pressing. The setting is made once and asks nothing more — and it never cuts off the thing you installed the app for."),
+                ('p', "<strong>Its limitation, stated plainly:</strong> the rules describe the markup of sites nobody controls. When a network redesigns, a filter stops biting until the rule is fixed. That's the price of this approach, and it's why Slowcial's rule set is served separately from the app — repairable in minutes rather than days."),
+
+                ('h2', "The table"),
+                ('compare', ("Methods that cut access", [
+                    "Deleting: you lose the messages",
+                    "Blockers: you lose legitimate use too",
+                    "Built-in limits: one “ignore” button is enough",
+                    "Requires effort every day",
+                ], "Methods that remove mechanics", [
+                    "Messages and the people you follow stay",
+                    "Only the feed built to hold you goes",
+                    "Nothing to ignore, nothing to route around",
+                    "Set once",
+                ])),
+
+                ('h2', "What to choose"),
+                ('ul', [
+                    "<strong>If the network does nothing for you socially</strong> — delete it. It's simpler and free.",
+                    "<strong>If the problem is evenings</strong> — a time window is enough, and plenty of tools offer one, Slowcial included.",
+                    "<strong>If it costs you time but you can't leave</strong> — removing the mechanics is the only method here that doesn't ask you to choose between your time and your people.",
+                ]),
+                ('pull', "The best method isn't the strictest. It's the one you'll still have in six months."),
+            ],
+            'faq': [
+                ("What's the most effective way to scroll less?",
+                 "In the moment, deleting the app. Over time, removing the engagement mechanics while keeping the network — because it's the only one that doesn't cost you access to your messages, and so doesn't get abandoned after a few days."),
+                ("Do app blockers work?",
+                 "They cut off access, which solves a different problem: the problem isn't opening the app, it's the endless feed you find inside. And because they block legitimate use too, they end up switched off."),
+                ("Does greyscale actually reduce screen time?",
+                 "The effect is real: a feed without colour pulls less. Its weakness is that it applies to the entire phone, photos and camera included, so you disable it for one specific reason and forget to re-enable it."),
+                ("Can you keep your messages while removing reels?",
+                 "Yes. That's precisely what filtering does: the network opens with your account, your conversations and the people you follow intact, but without short-video feeds, suggestions or discovery pages."),
+            ],
+        },
+    },
 ]

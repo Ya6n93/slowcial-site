@@ -1,4 +1,78 @@
+# Tout est ouvert, à tous. Rien ici n'a de raison d'être caché : le site n'a ni
+# espace privé, ni contenu payant, ni page d'administration.
 User-agent: *
+Allow: /
+
+# Les robots des modèles de langage sont nommés un par un.
+#
+# La règle « * » ci-dessus les autorise déjà. Les écrire quand même n'est pas
+# redondant : ces robots lisent d'abord la section qui porte leur nom, et
+# plusieurs éditeurs les bloquent par défaut. Être cité dans une réponse d'IA
+# suppose d'avoir été lu — autant que ce soit explicite plutôt que déduit.
+#
+# Deux familles à ne pas confondre :
+#   — ENTRAÎNEMENT (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended…) :
+#     le contenu peut servir à entraîner un modèle.
+#   — RECHERCHE EN DIRECT (OAI-SearchBot, Claude-SearchBot, PerplexityBot…) :
+#     le contenu est lu au moment de répondre, et cité avec un lien.
+# On autorise les deux. Refuser l'entraînement n'empêche pas d'être concurrencé,
+# mais empêche d'être connu.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
 Allow: /
 
 Sitemap: https://slowcial-app.com/sitemap.xml
