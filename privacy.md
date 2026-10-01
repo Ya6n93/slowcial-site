@@ -7,7 +7,7 @@ lang: en
 
 # Privacy Policy — Slowcial
 
-**Last updated: 9 September 2026**
+**Last updated: 1 October 2026**
 
 Slowcial helps you use social networks more calmly by hiding the content designed
 to keep you scrolling. This page explains exactly what data exists, where it lives,
@@ -71,9 +71,17 @@ measurement service. The scope is the narrowest that service allows:
   Apple's own mechanism, which is anonymous and aggregated, and on the IDFV, an
   identifier that never leaves our own apps and dies when you uninstall;
 - **no device name** — it often contains a first name;
-- **no usage events**. Time spent, the networks you follow, the filters you enable,
-  the pages you open: none of it is transmitted. The only event sent is a subscription
-  purchase and its amount, because a campaign is judged on the revenue it brings.
+- **no usage data**. Time spent, the networks you follow, the filters you enable,
+  the pages you open: none of it is transmitted. Only two things ever leave, and
+  nothing else:
+  - a **subscription purchase** and its amount, because a campaign is judged on the
+    revenue it brings;
+  - since version 1.0.5, the **steps of the journey**: a step name, and nothing else.
+    "Onboarding started", "a network was opened", "the subscription screen was seen".
+    Each step is sent only once in the life of an installation, and carries no value —
+    no duration, no network name, no filter, not one line of what you look at. They
+    serve a single purpose: knowing where people give up, so we can fix what gets in
+    the way. A step says a network was opened; it does not say which one.
 
 Meta and TikTok receive the matching measurement from AppsFlyer: that an install, and
 where applicable a purchase, followed one of their ads. See:

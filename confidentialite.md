@@ -7,7 +7,7 @@ lang: fr
 
 # Politique de confidentialité — Slowcial
 
-**Dernière mise à jour : 9 septembre 2026**
+**Dernière mise à jour : 1er octobre 2026**
 
 Slowcial est une application qui t'aide à utiliser tes réseaux sociaux plus calmement,
 en masquant les contenus conçus pour te retenir. Cette page explique exactement
@@ -74,10 +74,18 @@ plus étroit que ce service permette :
   repose sur SKAdNetwork, le mécanisme d'Apple, anonyme et agrégé, et sur l'IDFV, un
   identifiant qui ne sort pas de nos applications et meurt à la désinstallation ;
 - **aucun nom d'appareil** — il contient souvent un prénom ;
-- **aucun événement d'usage**. Le temps passé, les réseaux que tu suis, les filtres
-  que tu actives, les pages que tu ouvres : rien de tout cela n'est transmis. Le seul
-  événement envoyé est l'achat d'un abonnement, avec son montant, parce qu'une campagne
-  se juge au revenu qu'elle rapporte.
+- **aucune donnée d'usage**. Le temps passé, les réseaux que tu suis, les filtres
+  que tu actives, les pages que tu ouvres : rien de tout cela n'est transmis. Deux
+  choses seulement sortent, et rien d'autre :
+  - l'**achat d'un abonnement**, avec son montant, parce qu'une campagne se juge au
+    revenu qu'elle rapporte ;
+  - depuis la version 1.0.5, les **étapes du parcours** : un nom d'étape, et rien
+    d'autre. « Installation commencée », « un réseau a été ouvert », « l'écran
+    d'abonnement a été vu ». Chaque étape ne part qu'une seule fois dans la vie de
+    l'installation, et ne porte aucune valeur — pas de durée, pas de nom de réseau,
+    pas de filtre, pas une ligne de ce que tu consultes. Elles servent à une seule
+    chose : savoir à quel moment les gens abandonnent, pour corriger ce qui coince.
+    Un jalon dit qu'un réseau a été ouvert ; il ne dit pas lequel.
 
 Meta et TikTok reçoivent d'AppsFlyer la mesure correspondante : qu'une installation
 et, le cas échéant, qu'un achat ont suivi une de leurs annonces. Voir :
